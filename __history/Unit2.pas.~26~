@@ -37,7 +37,6 @@ type
       var MouseActivate: TMouseActivate);
     procedure BtnCliClick(Sender: TObject);
     procedure BtnPizzaClick(Sender: TObject);
-    procedure BtnBebidaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,12 +49,6 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TFrmVenda.BtnBebidaClick(Sender: TObject);
-begin
-  Application.CreateForm(TFRMCadBebes, FRMCadBebes);
-  FRMCadBebes.ShowModal;
-end;
 
 procedure TFrmVenda.BtnCliClick(Sender: TObject);
 begin

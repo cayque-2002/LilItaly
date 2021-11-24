@@ -4,8 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids, Unit7,
-  Vcl.DBGrids, Vcl.DBCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids, Unit7, Unit3, Unit4, Unit5, Unit6,
+  Vcl.DBGrids, Vcl.DBCtrls, Data.DBXFirebird, Datasnap.DBClient, SimpleDS;
 
 type
   TFrmVenda = class(TForm)
@@ -16,7 +16,6 @@ type
     LbEndereco: TLabel;
     LbPedido: TLabel;
     LbPizza: TLabel;
-    CBoxPizza: TComboBox;
     Edit1: TEdit;
     DescricaoPizza: TLabel;
     EdtValorPizza: TEdit;
@@ -24,15 +23,18 @@ type
     DBGrid1: TDBGrid;
     BtnCli: TButton;
     Label1: TLabel;
-    CBoxBebida: TComboBox;
     EdtValorBebida: TEdit;
     Label2: TLabel;
     BtnPizza: TButton;
     BtnBebida: TButton;
     Button1: TButton;
     BtnRegPed: TButton;
-    CBoxCli: TDBLookupComboBox;
-    procedure FormCreate(Sender: TObject);
+    cmbCliente: TDBLookupComboBox;
+    cmbPizza: TDBLookupComboBox;
+    CBoxBebida: TDBLookupComboBox;
+    procedure CBoxBebidaMouseActivate(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y, HitTest: Integer;
+      var MouseActivate: TMouseActivate);
   private
     { Private declarations }
   public
@@ -46,16 +48,11 @@ implementation
 
 {$R *.dfm}
 
-procedure TFrmVenda.FormCreate(Sender: TObject);
+procedure TFrmVenda.CBoxBebidaMouseActivate(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y, HitTest: Integer;
+  var MouseActivate: TMouseActivate);
 begin
-
-  DataModule7.select.DataSet.CommandText := 'SELECT ID, NOME FROM CLIENTES';
-  CBoxCli.ListSource := DataModule7.retorno;
-  CBoxCli.ListFieldIndex := DataModule7.select.IndexName('ID');
-  CBoxCli.ListField := DataModule7.select.IndexName('NOME');
-  DataModule7.select.Active := True;
-
-
+    ShowMessage('safada');
 end;
 
 end.

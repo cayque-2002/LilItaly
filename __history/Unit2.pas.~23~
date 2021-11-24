@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids, Unit7,
-  Vcl.DBGrids, Vcl.DBCtrls;
+  Vcl.DBGrids, Vcl.DBCtrls, Data.DBXFirebird, Datasnap.DBClient, SimpleDS;
 
 type
   TFrmVenda = class(TForm)
@@ -16,7 +16,6 @@ type
     LbEndereco: TLabel;
     LbPedido: TLabel;
     LbPizza: TLabel;
-    CBoxPizza: TComboBox;
     Edit1: TEdit;
     DescricaoPizza: TLabel;
     EdtValorPizza: TEdit;
@@ -24,14 +23,18 @@ type
     DBGrid1: TDBGrid;
     BtnCli: TButton;
     Label1: TLabel;
-    CBoxBebida: TComboBox;
     EdtValorBebida: TEdit;
     Label2: TLabel;
     BtnPizza: TButton;
     BtnBebida: TButton;
     Button1: TButton;
     BtnRegPed: TButton;
-    CBoxCli: TDBLookupComboBox;
+    cmbCliente: TDBLookupComboBox;
+    cmbPizza: TDBLookupComboBox;
+    CBoxBebida: TDBLookupComboBox;
+    procedure CBoxBebidaMouseActivate(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y, HitTest: Integer;
+      var MouseActivate: TMouseActivate);
   private
     { Private declarations }
   public
@@ -44,5 +47,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrmVenda.CBoxBebidaMouseActivate(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y, HitTest: Integer;
+  var MouseActivate: TMouseActivate);
+begin
+    ShowMessage('safada');
+end;
 
 end.

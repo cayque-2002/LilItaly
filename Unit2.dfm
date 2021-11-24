@@ -189,6 +189,7 @@ object FrmVenda: TFrmVenda
     Height = 25
     Caption = 'Cadastrar Cliente'
     TabOrder = 4
+    OnClick = BtnCliClick
   end
   object EdtValorBebida: TEdit
     Left = 473
@@ -204,6 +205,7 @@ object FrmVenda: TFrmVenda
     Height = 25
     Caption = 'Cadastrar Pizza'
     TabOrder = 6
+    OnClick = BtnPizzaClick
   end
   object BtnBebida: TButton
     Left = 591
@@ -212,6 +214,7 @@ object FrmVenda: TFrmVenda
     Height = 25
     Caption = 'Cadastrar Bebes'
     TabOrder = 7
+    OnClick = BtnBebidaClick
   end
   object Button1: TButton
     Left = 24

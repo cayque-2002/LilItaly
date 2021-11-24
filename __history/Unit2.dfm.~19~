@@ -156,33 +156,26 @@ object FrmVenda: TFrmVenda
     Height = 28
     TabOrder = 0
   end
-  object CBoxPizza: TComboBox
-    Left = 177
-    Top = 231
-    Width = 216
-    Height = 28
-    TabOrder = 1
-  end
   object Edit1: TEdit
     Left = 245
     Top = 327
     Width = 356
     Height = 28
-    TabOrder = 2
+    TabOrder = 1
   end
   object EdtValorPizza: TEdit
     Left = 473
     Top = 231
     Width = 112
     Height = 28
-    TabOrder = 3
+    TabOrder = 2
   end
   object DBGrid1: TDBGrid
     Left = 24
     Top = 416
     Width = 673
     Height = 120
-    TabOrder = 4
+    TabOrder = 3
     TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -16
@@ -195,21 +188,15 @@ object FrmVenda: TFrmVenda
     Width = 130
     Height = 25
     Caption = 'Cadastrar Cliente'
-    TabOrder = 5
-  end
-  object CBoxBebida: TComboBox
-    Left = 177
-    Top = 281
-    Width = 216
-    Height = 28
-    TabOrder = 6
+    TabOrder = 4
+    OnClick = BtnCliClick
   end
   object EdtValorBebida: TEdit
     Left = 473
     Top = 281
     Width = 112
     Height = 28
-    TabOrder = 7
+    TabOrder = 5
   end
   object BtnPizza: TButton
     Left = 591
@@ -217,7 +204,8 @@ object FrmVenda: TFrmVenda
     Width = 130
     Height = 25
     Caption = 'Cadastrar Pizza'
-    TabOrder = 8
+    TabOrder = 6
+    OnClick = BtnPizzaClick
   end
   object BtnBebida: TButton
     Left = 591
@@ -225,7 +213,7 @@ object FrmVenda: TFrmVenda
     Width = 130
     Height = 25
     Caption = 'Cadastrar Bebes'
-    TabOrder = 9
+    TabOrder = 7
   end
   object Button1: TButton
     Left = 24
@@ -233,7 +221,7 @@ object FrmVenda: TFrmVenda
     Width = 290
     Height = 25
     Caption = 'Adicionar ao Pedido'
-    TabOrder = 10
+    TabOrder = 8
   end
   object BtnRegPed: TButton
     Left = 400
@@ -241,34 +229,37 @@ object FrmVenda: TFrmVenda
     Width = 290
     Height = 25
     Caption = 'Registrar Pedido'
-    TabOrder = 11
+    TabOrder = 9
   end
-  object CBoxCli: TDBLookupComboBox
+  object cmbCliente: TDBLookupComboBox
     Left = 177
     Top = 130
     Width = 408
     Height = 28
     KeyField = 'ID'
     ListField = 'NOME'
-    ListSource = dataCliente
+    ListSource = DataModule7.srcClientes
+    TabOrder = 10
+  end
+  object cmbPizza: TDBLookupComboBox
+    Left = 185
+    Top = 233
+    Width = 208
+    Height = 28
+    KeyField = 'ID'
+    ListField = 'NOME'
+    ListSource = DataModule7.srcPizzas
+    TabOrder = 11
+  end
+  object CBoxBebida: TDBLookupComboBox
+    Left = 185
+    Top = 281
+    Width = 208
+    Height = 28
+    KeyField = 'ID'
+    ListField = 'NOME'
+    ListSource = DataModule7.srcBebidas
     TabOrder = 12
-  end
-  object sqlCliente: TSimpleDataSet
-    Active = True
-    Aggregates = <>
-    Connection = DataModule7.SQLConnection1
-    DataSet.Active = True
-    DataSet.CommandText = 'select ID, NOME from CLIENTES'
-    DataSet.DataSource = dataCliente
-    DataSet.MaxBlobSize = -1
-    DataSet.Params = <>
-    Params = <>
-    Left = 16
-    Top = 120
-  end
-  object dataCliente: TDataSource
-    DataSet = sqlCliente
-    Left = 72
-    Top = 120
+    OnMouseActivate = CBoxBebidaMouseActivate
   end
 end

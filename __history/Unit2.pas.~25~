@@ -36,8 +36,6 @@ type
       Shift: TShiftState; X, Y, HitTest: Integer;
       var MouseActivate: TMouseActivate);
     procedure BtnCliClick(Sender: TObject);
-    procedure BtnPizzaClick(Sender: TObject);
-    procedure BtnBebidaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,22 +49,10 @@ implementation
 
 {$R *.dfm}
 
-procedure TFrmVenda.BtnBebidaClick(Sender: TObject);
-begin
-  Application.CreateForm(TFRMCadBebes, FRMCadBebes);
-  FRMCadBebes.ShowModal;
-end;
-
 procedure TFrmVenda.BtnCliClick(Sender: TObject);
 begin
   Application.CreateForm(TFRMCadCliente, FRMCadCliente);
   FRMCadCliente.ShowModal;
-end;
-
-procedure TFrmVenda.BtnPizzaClick(Sender: TObject);
-begin
-  Application.CreateForm(TFRMCadPizza, FRMCadPizza);
-  FRMCadPizza.ShowModal;
 end;
 
 procedure TFrmVenda.CBoxBebidaMouseActivate(Sender: TObject;
