@@ -1,0 +1,42 @@
+unit Unit3;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Mask, Vcl.StdCtrls;
+
+type
+  TFRMCadCliente = class(TForm)
+    LbTituloCadCliente: TLabel;
+    LbNome: TLabel;
+    EdtNomeCli: TEdit;
+    LbCPFCli: TLabel;
+    EdtEmailCli: TEdit;
+    LbEmailCli: TLabel;
+    LbTelCli: TLabel;
+    Edit4: TEdit;
+    Label4: TLabel;
+    Edit5: TEdit;
+    Label5: TLabel;
+    Edit6: TEdit;
+    Label6: TLabel;
+    Edit7: TEdit;
+    Label7: TLabel;
+    MEdtCPFCli: TMaskEdit;
+    MaskEdit1: TMaskEdit;
+    Label1: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRMCadCliente: TFRMCadCliente;
+
+implementation
+
+{$R *.dfm}
+
+end.

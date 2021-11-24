@@ -1,0 +1,210 @@
+object FRMCadCliente: TFRMCadCliente
+  Left = 0
+  Top = 0
+  Caption = 'Little Italy Pizzaria'
+  ClientHeight = 337
+  ClientWidth = 788
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Old English Text MT'
+  Font.Style = [fsBold, fsItalic]
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 14
+  object LbTituloCadCliente: TLabel
+    Left = 0
+    Top = 0
+    Width = 785
+    Height = 57
+    Alignment = taCenter
+    Caption = 'Cadastrar Cliente'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -48
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object LbNome: TLabel
+    Left = 24
+    Top = 96
+    Width = 63
+    Height = 26
+    Caption = 'Nome:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object LbCPFCli: TLabel
+    Left = 24
+    Top = 144
+    Width = 62
+    Height = 26
+    Caption = 'CPF:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object LbEmailCli: TLabel
+    Left = 24
+    Top = 192
+    Width = 70
+    Height = 26
+    Caption = 'E-mail:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object LbTelCli: TLabel
+    Left = 24
+    Top = 240
+    Width = 85
+    Height = 26
+    Caption = 'Telefone:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 472
+    Top = 123
+    Width = 63
+    Height = 26
+    Caption = 'Nome:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 472
+    Top = 171
+    Width = 63
+    Height = 26
+    Caption = 'Nome:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label6: TLabel
+    Left = 472
+    Top = 211
+    Width = 63
+    Height = 26
+    Caption = 'Nome:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 472
+    Top = 251
+    Width = 63
+    Height = 26
+    Caption = 'Nome:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 560
+    Top = 83
+    Width = 99
+    Height = 26
+    Caption = 'Endere'#231'os:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object EdtNomeCli: TEdit
+    Left = 93
+    Top = 103
+    Width = 329
+    Height = 21
+    TabOrder = 0
+  end
+  object EdtEmailCli: TEdit
+    Left = 100
+    Top = 199
+    Width = 322
+    Height = 21
+    TabOrder = 1
+  end
+  object Edit4: TEdit
+    Left = 560
+    Top = 130
+    Width = 201
+    Height = 21
+    TabOrder = 2
+  end
+  object Edit5: TEdit
+    Left = 560
+    Top = 178
+    Width = 201
+    Height = 21
+    TabOrder = 3
+  end
+  object Edit6: TEdit
+    Left = 560
+    Top = 218
+    Width = 201
+    Height = 21
+    TabOrder = 4
+  end
+  object Edit7: TEdit
+    Left = 560
+    Top = 258
+    Width = 201
+    Height = 21
+    TabOrder = 5
+  end
+  object MEdtCPFCli: TMaskEdit
+    Left = 93
+    Top = 151
+    Width = 140
+    Height = 22
+    EditMask = '000\.000\.000\-00;1;_'
+    MaxLength = 14
+    TabOrder = 6
+    Text = '   .   .   -  '
+  end
+  object MaskEdit1: TMaskEdit
+    Left = 115
+    Top = 247
+    Width = 129
+    Height = 22
+    EditMask = '!\(99\)00000-0000;1;_'
+    MaxLength = 14
+    TabOrder = 7
+    Text = '(  )     -    '
+  end
+end

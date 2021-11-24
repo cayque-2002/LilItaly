@@ -1,0 +1,47 @@
+object DataModule7: TDataModule7
+  OldCreateOrder = False
+  Height = 285
+  Width = 627
+  object SQLConnection1: TSQLConnection
+    ConnectionName = 'FBConnection'
+    DriverName = 'Firebird'
+    LoginPrompt = False
+    Params.Strings = (
+      'DriverName=Firebird'
+      
+        'Database=C:\Users\cayqu\OneDrive\'#193'rea de Trabalho\Little Italy P' +
+        'izzaria\LITTLEITALY.FDB'
+      'RoleName=RoleName'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'ServerCharSet='
+      'SQLDialect=3'
+      'ErrorResourceFile='
+      'LocaleCode=0000'
+      'BlobSize=-1'
+      'CommitRetain=False'
+      'WaitOnLocks=True'
+      'IsolationLevel=ReadCommitted'
+      'Trim Char=False')
+    Connected = True
+    Left = 48
+    Top = 48
+  end
+  object LOGIN: TSimpleDataSet
+    Active = True
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.Active = True
+    DataSet.CommandText = 'SELECT ID_FUNC, NOME FROM FUNCIONARIOS'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 264
+    Top = 24
+  end
+  object ListaUsuarios: TDataSource
+    DataSet = LOGIN
+    Left = 440
+    Top = 24
+  end
+end

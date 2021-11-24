@@ -1,0 +1,29 @@
+unit Unit7;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Data.SqlExpr, Data.DBXFirebird,
+  Datasnap.DBClient, SimpleDS;
+
+type
+  TDataModule7 = class(TDataModule)
+    SQLConnection1: TSQLConnection;
+    LOGIN: TSimpleDataSet;
+    DataSource1: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule7: TDataModule7;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

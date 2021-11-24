@@ -1,0 +1,35 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.DBCtrls, Unit7;
+
+type
+  TFRMLogin = class(TForm)
+    LbLogin: TLabel;
+    LbTitulo: TLabel;
+    BtnLogin: TButton;
+    BtnSair: TButton;
+    DBLookupComboBox1: TDBLookupComboBox;
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRMLogin: TFRMLogin;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFRMLogin.FormShow(Sender: TObject);
+begin
+  Unit7.LOGIN.Activate := true;
+end;
+
+end.
