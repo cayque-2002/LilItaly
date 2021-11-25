@@ -25,6 +25,7 @@ type
     Label1: TLabel;
     EdtValorBebida: TEdit;
     Label2: TLabel;
+    BtnBebida: TButton;
     Button1: TButton;
     BtnRegPed: TButton;
     cmbCliente: TDBLookupComboBox;

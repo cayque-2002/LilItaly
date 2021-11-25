@@ -189,20 +189,14 @@ object FrmVenda: TFrmVenda
     Height = 25
     Caption = 'Cadastrar Cliente'
     TabOrder = 4
-  end
-  object CBoxBebida: TComboBox
-    Left = 177
-    Top = 281
-    Width = 216
-    Height = 28
-    TabOrder = 5
+    OnClick = BtnCliClick
   end
   object EdtValorBebida: TEdit
     Left = 473
     Top = 281
     Width = 112
     Height = 28
-    TabOrder = 6
+    TabOrder = 5
   end
   object BtnPizza: TButton
     Left = 591
@@ -210,7 +204,8 @@ object FrmVenda: TFrmVenda
     Width = 130
     Height = 25
     Caption = 'Cadastrar Pizza'
-    TabOrder = 7
+    TabOrder = 6
+    OnClick = BtnPizzaClick
   end
   object BtnBebida: TButton
     Left = 591
@@ -218,7 +213,8 @@ object FrmVenda: TFrmVenda
     Width = 130
     Height = 25
     Caption = 'Cadastrar Bebes'
-    TabOrder = 8
+    TabOrder = 7
+    OnClick = BtnBebidaClick
   end
   object Button1: TButton
     Left = 24
@@ -226,7 +222,7 @@ object FrmVenda: TFrmVenda
     Width = 290
     Height = 25
     Caption = 'Adicionar ao Pedido'
-    TabOrder = 9
+    TabOrder = 8
   end
   object BtnRegPed: TButton
     Left = 400
@@ -234,7 +230,7 @@ object FrmVenda: TFrmVenda
     Width = 290
     Height = 25
     Caption = 'Registrar Pedido'
-    TabOrder = 10
+    TabOrder = 9
   end
   object cmbCliente: TDBLookupComboBox
     Left = 177
@@ -244,7 +240,7 @@ object FrmVenda: TFrmVenda
     KeyField = 'ID'
     ListField = 'NOME'
     ListSource = DataModule7.srcClientes
-    TabOrder = 11
+    TabOrder = 10
   end
   object cmbPizza: TDBLookupComboBox
     Left = 185
@@ -254,13 +250,17 @@ object FrmVenda: TFrmVenda
     KeyField = 'ID'
     ListField = 'NOME'
     ListSource = DataModule7.srcPizzas
-    TabOrder = 12
+    TabOrder = 11
   end
-  object StringGrid1: TStringGrid
-    Left = 266
-    Top = 30
-    Width = 359
-    Height = 140
-    TabOrder = 13
+  object CBoxBebida: TDBLookupComboBox
+    Left = 185
+    Top = 281
+    Width = 208
+    Height = 28
+    KeyField = 'ID'
+    ListField = 'NOME'
+    ListSource = DataModule7.srcBebidas
+    TabOrder = 12
+    OnMouseActivate = CBoxBebidaMouseActivate
   end
 end

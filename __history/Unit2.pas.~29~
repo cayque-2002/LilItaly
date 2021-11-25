@@ -25,6 +25,7 @@ type
     Label1: TLabel;
     EdtValorBebida: TEdit;
     Label2: TLabel;
+    BtnBebida: TButton;
     Button1: TButton;
     BtnRegPed: TButton;
     cmbCliente: TDBLookupComboBox;
@@ -44,7 +45,6 @@ type
     procedure BtnBebidaClick(Sender: TObject);
     procedure ToolButton1Click(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
-    procedure ToolButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -93,12 +93,6 @@ procedure TFrmVenda.ToolButton2Click(Sender: TObject);
 begin
 Application.CreateForm(TFRMCadPizza, FRMCadPizza);
   FRMCadPizza.ShowModal;
-end;
-
-procedure TFrmVenda.ToolButton3Click(Sender: TObject);
-begin
-Application.CreateForm(TFRMCadBebes, FRMCadBebes);
-  FRMCadBebes.ShowModal;
 end;
 
 end.

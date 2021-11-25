@@ -2,7 +2,7 @@ object FrmVenda: TFrmVenda
   Left = 0
   Top = 0
   Caption = 'Little Italy Pizzaria'
-  ClientHeight = 572
+  ClientHeight = 634
   ClientWidth = 723
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
@@ -33,8 +33,8 @@ object FrmVenda: TFrmVenda
     ExplicitWidth = 304
   end
   object LbVenda: TLabel
-    Left = 256
-    Top = 80
+    Left = 282
+    Top = 122
     Width = 176
     Height = 32
     Caption = 'Realizar Venda:'
@@ -47,7 +47,7 @@ object FrmVenda: TFrmVenda
   end
   object LbCliente: TLabel
     Left = 115
-    Top = 128
+    Top = 192
     Width = 56
     Height = 23
     Caption = 'Cliente:'
@@ -60,7 +60,7 @@ object FrmVenda: TFrmVenda
   end
   object LbEndereco: TLabel
     Left = 108
-    Top = 176
+    Top = 240
     Width = 71
     Height = 23
     Caption = 'Endere'#231'o:'
@@ -73,7 +73,7 @@ object FrmVenda: TFrmVenda
   end
   object LbPedido: TLabel
     Left = 0
-    Top = 224
+    Top = 288
     Width = 86
     Height = 32
     Caption = 'Pedido:'
@@ -86,7 +86,7 @@ object FrmVenda: TFrmVenda
   end
   object LbPizza: TLabel
     Left = 115
-    Top = 231
+    Top = 295
     Width = 46
     Height = 23
     Caption = 'Pizza:'
@@ -99,7 +99,7 @@ object FrmVenda: TFrmVenda
   end
   object DescricaoPizza: TLabel
     Left = 115
-    Top = 327
+    Top = 391
     Width = 124
     Height = 23
     Caption = 'Descri'#231#227'o Pizza:'
@@ -112,7 +112,7 @@ object FrmVenda: TFrmVenda
   end
   object LbValor: TLabel
     Left = 419
-    Top = 231
+    Top = 295
     Width = 48
     Height = 23
     Caption = 'Valor:'
@@ -125,7 +125,7 @@ object FrmVenda: TFrmVenda
   end
   object Label1: TLabel
     Left = 115
-    Top = 281
+    Top = 345
     Width = 57
     Height = 23
     Caption = 'Bebida:'
@@ -138,7 +138,7 @@ object FrmVenda: TFrmVenda
   end
   object Label2: TLabel
     Left = 419
-    Top = 281
+    Top = 345
     Width = 48
     Height = 23
     Caption = 'Valor:'
@@ -149,30 +149,37 @@ object FrmVenda: TFrmVenda
     Font.Style = []
     ParentFont = False
   end
+  object LbLogin: TLabel
+    Left = 8
+    Top = 62
+    Width = 72
+    Height = 20
+    Caption = 'Vendedor:'
+  end
   object EdtEndereco: TEdit
     Left = 185
-    Top = 176
+    Top = 240
     Width = 400
     Height = 28
     TabOrder = 0
   end
   object Edit1: TEdit
     Left = 245
-    Top = 327
+    Top = 391
     Width = 356
     Height = 28
     TabOrder = 1
   end
   object EdtValorPizza: TEdit
     Left = 473
-    Top = 231
+    Top = 295
     Width = 112
     Height = 28
     TabOrder = 2
   end
   object DBGrid1: TDBGrid
     Left = 24
-    Top = 416
+    Top = 480
     Width = 673
     Height = 120
     TabOrder = 3
@@ -184,90 +191,93 @@ object FrmVenda: TFrmVenda
   end
   object BtnCli: TButton
     Left = 591
-    Top = 130
+    Top = 194
     Width = 130
     Height = 25
     Caption = 'Cadastrar Cliente'
     TabOrder = 4
-  end
-  object CBoxBebida: TComboBox
-    Left = 177
-    Top = 281
-    Width = 216
-    Height = 28
-    TabOrder = 5
+    OnClick = BtnCliClick
   end
   object EdtValorBebida: TEdit
     Left = 473
-    Top = 281
+    Top = 345
     Width = 112
     Height = 28
-    TabOrder = 6
+    TabOrder = 5
   end
   object BtnPizza: TButton
     Left = 591
-    Top = 233
+    Top = 297
     Width = 130
     Height = 25
     Caption = 'Cadastrar Pizza'
-    TabOrder = 7
+    TabOrder = 6
+    OnClick = BtnPizzaClick
   end
   object BtnBebida: TButton
     Left = 591
-    Top = 283
+    Top = 347
     Width = 130
     Height = 25
     Caption = 'Cadastrar Bebes'
-    TabOrder = 8
+    TabOrder = 7
+    OnClick = BtnBebidaClick
   end
   object Button1: TButton
     Left = 24
-    Top = 385
+    Top = 449
     Width = 290
     Height = 25
     Caption = 'Adicionar ao Pedido'
-    TabOrder = 9
+    TabOrder = 8
   end
   object BtnRegPed: TButton
     Left = 400
-    Top = 385
+    Top = 449
     Width = 290
     Height = 25
     Caption = 'Registrar Pedido'
-    TabOrder = 10
+    TabOrder = 9
   end
   object cmbCliente: TDBLookupComboBox
     Left = 177
-    Top = 130
+    Top = 194
     Width = 408
     Height = 28
     KeyField = 'ID'
     ListField = 'NOME'
     ListSource = DataModule7.srcClientes
-    TabOrder = 11
+    TabOrder = 10
   end
   object cmbPizza: TDBLookupComboBox
     Left = 185
-    Top = 233
+    Top = 297
     Width = 208
     Height = 28
     KeyField = 'ID'
     ListField = 'NOME'
     ListSource = DataModule7.srcPizzas
-    TabOrder = 12
+    TabOrder = 11
   end
-  object DrawGrid1: TDrawGrid
-    Left = 281
-    Top = 50
-    Width = 320
-    Height = 120
+  object CBoxBebida: TDBLookupComboBox
+    Left = 185
+    Top = 345
+    Width = 208
+    Height = 28
+    KeyField = 'ID'
+    ListField = 'NOME'
+    ListSource = DataModule7.srcBebidas
+    TabOrder = 12
+    OnMouseActivate = CBoxBebidaMouseActivate
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 86
+    Top = 62
+    Width = 145
+    Height = 28
+    KeyField = 'ID_FUNC'
+    ListField = 'NOME'
+    ListSource = DataModule7.ListaUsuarios
     TabOrder = 13
-    OnClick = DrawGrid1Click
-    RowHeights = (
-      24
-      24
-      24
-      24
-      24)
   end
 end
