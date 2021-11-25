@@ -2,7 +2,6 @@ program Project1;
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {FRMLogin},
   Unit2 in 'Unit2.pas' {FrmVenda},
   Unit3 in 'Unit3.pas' {FRMCadCliente},
   Unit4 in 'Unit4.pas' {FRMCadPizza},
@@ -15,7 +14,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TFRMLogin, FRMLogin);
   Application.CreateForm(TFrmVenda, FrmVenda);
   Application.CreateForm(TFRMCadCliente, FRMCadCliente);
   Application.CreateForm(TFRMCadPizza, FRMCadPizza);

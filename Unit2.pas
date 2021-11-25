@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids, Unit7, Unit3, Unit4, Unit5, Unit6,
   Vcl.DBGrids, Vcl.DBCtrls, Data.DBXFirebird, Datasnap.DBClient, SimpleDS,
-  Vcl.ComCtrls, Vcl.ToolWin;
+  Vcl.ComCtrls, Vcl.ToolWin, Vcl.ExtCtrls;
 
 type
   TFrmVenda = class(TForm)
@@ -28,23 +28,24 @@ type
     Button1: TButton;
     BtnRegPed: TButton;
     cmbCliente: TDBLookupComboBox;
-    cmbPizza: TDBLookupComboBox;
+    CBoxPizza: TDBLookupComboBox;
     CBoxBebida: TDBLookupComboBox;
     LbLogin: TLabel;
     DBLookupComboBox1: TDBLookupComboBox;
     ToolBar1: TToolBar;
-    ToolButton1: TToolButton;
-    ToolButton2: TToolButton;
-    ToolButton3: TToolButton;
-    procedure CBoxBebidaMouseActivate(Sender: TObject; Button: TMouseButton;
-      Shift: TShiftState; X, Y, HitTest: Integer;
-      var MouseActivate: TMouseActivate);
+    TBtnCadCli: TToolButton;
+    TBtnCadPizza: TToolButton;
+    TBtnCadBebes: TToolButton;
+    Image1: TImage;
+    Image2: TImage;
     procedure BtnCliClick(Sender: TObject);
     procedure BtnPizzaClick(Sender: TObject);
     procedure BtnBebidaClick(Sender: TObject);
-    procedure ToolButton1Click(Sender: TObject);
-    procedure ToolButton2Click(Sender: TObject);
-    procedure ToolButton3Click(Sender: TObject);
+    procedure TBtnCadCliClick(Sender: TObject);
+    procedure TBtnCadPizzaClick(Sender: TObject);
+    procedure TBtnCadBebesClick(Sender: TObject);
+    procedure CBoxPizzaClick(Sender: TObject);
+    procedure CBoxBebidaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -76,26 +77,38 @@ begin
   FRMCadPizza.ShowModal;
 end;
 
-procedure TFrmVenda.CBoxBebidaMouseActivate(Sender: TObject;
-  Button: TMouseButton; Shift: TShiftState; X, Y, HitTest: Integer;
-  var MouseActivate: TMouseActivate);
+procedure TFrmVenda.CBoxBebidaClick(Sender: TObject);
 begin
-    ShowMessage('safada');
+ image2.Picture := nil;
+   if CBoxBebida.Text = 'Coca Lata' then
+      image2.Picture.LoadFromFile('C:\Users\cayqu\OneDrive\햞ea de Trabalho\Little Italy Pizzaria\coca-lata.bmp');
+   if CBoxBebida.Text = 'Guarana' then
+      image2.Picture.LoadFromFile('C:\Users\cayqu\OneDrive\햞ea de Trabalho\Little Italy Pizzaria\guarana-lata.bmp');
 end;
 
-procedure TFrmVenda.ToolButton1Click(Sender: TObject);
+
+procedure TFrmVenda.CBoxPizzaClick(Sender: TObject);
+begin
+    Image1.Picture := nil;
+   if CBoxPizza.Text = 'Mussarela' then
+      Image1.Picture.LoadFromFile('C:\Users\cayqu\OneDrive\햞ea de Trabalho\Little Italy Pizzaria\pizza-mussarela.bmp');
+   if CBoxPizza.Text = 'Calabresa' then
+      Image1.Picture.LoadFromFile('C:\Users\cayqu\OneDrive\햞ea de Trabalho\Little Italy Pizzaria\pizza-calabresa.bmp');
+end;
+
+procedure TFrmVenda.TBtnCadCliClick(Sender: TObject);
 begin
 Application.CreateForm(TFRMCadCliente, FRMCadCliente);
   FRMCadCliente.ShowModal;
 end;
 
-procedure TFrmVenda.ToolButton2Click(Sender: TObject);
+procedure TFrmVenda.TBtnCadPizzaClick(Sender: TObject);
 begin
 Application.CreateForm(TFRMCadPizza, FRMCadPizza);
   FRMCadPizza.ShowModal;
 end;
 
-procedure TFrmVenda.ToolButton3Click(Sender: TObject);
+procedure TFrmVenda.TBtnCadBebesClick(Sender: TObject);
 begin
 Application.CreateForm(TFRMCadBebes, FRMCadBebes);
   FRMCadBebes.ShowModal;

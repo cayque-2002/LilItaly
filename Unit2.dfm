@@ -2,8 +2,8 @@ object FrmVenda: TFrmVenda
   Left = 0
   Top = 0
   Caption = 'Little Italy Pizzaria'
-  ClientHeight = 634
-  ClientWidth = 723
+  ClientHeight = 705
+  ClientWidth = 780
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -17,7 +17,7 @@ object FrmVenda: TFrmVenda
   object LbTituloVenda: TLabel
     Left = 0
     Top = 0
-    Width = 723
+    Width = 780
     Height = 44
     Align = alTop
     Alignment = taCenter
@@ -99,7 +99,7 @@ object FrmVenda: TFrmVenda
   end
   object DescricaoPizza: TLabel
     Left = 115
-    Top = 391
+    Top = 447
     Width = 124
     Height = 23
     Caption = 'Descri'#231#227'o Pizza:'
@@ -125,7 +125,7 @@ object FrmVenda: TFrmVenda
   end
   object Label1: TLabel
     Left = 115
-    Top = 345
+    Top = 401
     Width = 57
     Height = 23
     Caption = 'Bebida:'
@@ -138,7 +138,7 @@ object FrmVenda: TFrmVenda
   end
   object Label2: TLabel
     Left = 419
-    Top = 345
+    Top = 401
     Width = 48
     Height = 23
     Caption = 'Valor:'
@@ -156,6 +156,18 @@ object FrmVenda: TFrmVenda
     Height = 20
     Caption = 'Vendedor:'
   end
+  object Image1: TImage
+    Left = 624
+    Top = 276
+    Width = 105
+    Height = 85
+  end
+  object Image2: TImage
+    Left = 624
+    Top = 390
+    Width = 105
+    Height = 85
+  end
   object EdtEndereco: TEdit
     Left = 185
     Top = 240
@@ -165,7 +177,7 @@ object FrmVenda: TFrmVenda
   end
   object Edit1: TEdit
     Left = 245
-    Top = 391
+    Top = 447
     Width = 356
     Height = 28
     TabOrder = 1
@@ -179,7 +191,7 @@ object FrmVenda: TFrmVenda
   end
   object DBGrid1: TDBGrid
     Left = 24
-    Top = 480
+    Top = 528
     Width = 673
     Height = 120
     TabOrder = 3
@@ -191,14 +203,14 @@ object FrmVenda: TFrmVenda
   end
   object EdtValorBebida: TEdit
     Left = 473
-    Top = 345
+    Top = 401
     Width = 112
     Height = 28
     TabOrder = 4
   end
   object Button1: TButton
     Left = 24
-    Top = 449
+    Top = 497
     Width = 290
     Height = 25
     Caption = 'Adicionar ao Pedido'
@@ -206,7 +218,7 @@ object FrmVenda: TFrmVenda
   end
   object BtnRegPed: TButton
     Left = 400
-    Top = 449
+    Top = 497
     Width = 290
     Height = 25
     Caption = 'Registrar Pedido'
@@ -222,7 +234,7 @@ object FrmVenda: TFrmVenda
     ListSource = DataModule7.srcClientes
     TabOrder = 7
   end
-  object cmbPizza: TDBLookupComboBox
+  object CBoxPizza: TDBLookupComboBox
     Left = 185
     Top = 297
     Width = 208
@@ -231,17 +243,18 @@ object FrmVenda: TFrmVenda
     ListField = 'NOME'
     ListSource = DataModule7.srcPizzas
     TabOrder = 8
+    OnClick = CBoxPizzaClick
   end
   object CBoxBebida: TDBLookupComboBox
     Left = 185
-    Top = 345
+    Top = 401
     Width = 208
     Height = 28
     KeyField = 'ID'
     ListField = 'NOME'
     ListSource = DataModule7.srcBebidas
     TabOrder = 9
-    OnMouseActivate = CBoxBebidaMouseActivate
+    OnClick = CBoxBebidaClick
   end
   object DBLookupComboBox1: TDBLookupComboBox
     Left = 78
@@ -256,32 +269,33 @@ object FrmVenda: TFrmVenda
   object ToolBar1: TToolBar
     Left = 0
     Top = 44
-    Width = 723
+    Width = 780
     Height = 37
     ButtonHeight = 41
     ButtonWidth = 72
     Caption = 'ToolBar1'
     TabOrder = 11
-    object ToolButton1: TToolButton
+    ExplicitWidth = 723
+    object TBtnCadCli: TToolButton
       Left = 0
       Top = 0
-      Caption = 'ToolButton1'
+      Caption = 'TBtnCadCli'
       ImageIndex = 0
-      OnClick = ToolButton1Click
+      OnClick = TBtnCadCliClick
     end
-    object ToolButton2: TToolButton
+    object TBtnCadPizza: TToolButton
       Left = 72
       Top = 0
-      Caption = 'ToolButton2'
+      Caption = 'TBtnCadPizza'
       ImageIndex = 1
-      OnClick = ToolButton2Click
+      OnClick = TBtnCadPizzaClick
     end
-    object ToolButton3: TToolButton
+    object TBtnCadBebes: TToolButton
       Left = 144
       Top = 0
-      Caption = 'ToolButton3'
+      Caption = 'TBtnCadBebes'
       ImageIndex = 2
-      OnClick = ToolButton3Click
+      OnClick = TBtnCadBebesClick
     end
   end
 end
