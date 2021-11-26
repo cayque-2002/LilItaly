@@ -20,6 +20,9 @@ type
     srcPizzas: TDataSource;
     getBebidas: TSimpleDataSet;
     srcBebidas: TDataSource;
+    INSERTPED: TSimpleDataSet;
+    getPed: TSimpleDataSet;
+    getPedID: TIntegerField;
   private
     { Private declarations }
   public

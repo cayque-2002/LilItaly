@@ -33,8 +33,8 @@ object FrmVenda: TFrmVenda
     ExplicitWidth = 304
   end
   object LbVenda: TLabel
-    Left = 282
-    Top = 122
+    Left = 314
+    Top = 102
     Width = 176
     Height = 32
     Caption = 'Realizar Venda:'
@@ -46,8 +46,8 @@ object FrmVenda: TFrmVenda
     ParentFont = False
   end
   object LbCliente: TLabel
-    Left = 115
-    Top = 192
+    Left = 155
+    Top = 152
     Width = 56
     Height = 23
     Caption = 'Cliente:'
@@ -59,8 +59,8 @@ object FrmVenda: TFrmVenda
     ParentFont = False
   end
   object LbEndereco: TLabel
-    Left = 108
-    Top = 240
+    Left = 148
+    Top = 200
     Width = 71
     Height = 23
     Caption = 'Endere'#231'o:'
@@ -72,8 +72,8 @@ object FrmVenda: TFrmVenda
     ParentFont = False
   end
   object LbPedido: TLabel
-    Left = 0
-    Top = 288
+    Left = 48
+    Top = 145
     Width = 86
     Height = 32
     Caption = 'Pedido:'
@@ -86,7 +86,7 @@ object FrmVenda: TFrmVenda
   end
   object LbPizza: TLabel
     Left = 115
-    Top = 295
+    Top = 319
     Width = 46
     Height = 23
     Caption = 'Pizza:'
@@ -99,7 +99,7 @@ object FrmVenda: TFrmVenda
   end
   object DescricaoPizza: TLabel
     Left = 115
-    Top = 447
+    Top = 471
     Width = 124
     Height = 23
     Caption = 'Descri'#231#227'o Pizza:'
@@ -112,7 +112,7 @@ object FrmVenda: TFrmVenda
   end
   object LbValor: TLabel
     Left = 419
-    Top = 295
+    Top = 319
     Width = 48
     Height = 23
     Caption = 'Valor:'
@@ -125,7 +125,7 @@ object FrmVenda: TFrmVenda
   end
   object Label1: TLabel
     Left = 115
-    Top = 401
+    Top = 425
     Width = 57
     Height = 23
     Caption = 'Bebida:'
@@ -138,7 +138,7 @@ object FrmVenda: TFrmVenda
   end
   object Label2: TLabel
     Left = 419
-    Top = 401
+    Top = 425
     Width = 48
     Height = 23
     Caption = 'Valor:'
@@ -158,41 +158,41 @@ object FrmVenda: TFrmVenda
   end
   object Image1: TImage
     Left = 624
-    Top = 276
+    Top = 300
     Width = 105
     Height = 85
   end
   object Image2: TImage
     Left = 624
-    Top = 390
+    Top = 414
     Width = 105
     Height = 85
   end
   object EdtEndereco: TEdit
-    Left = 185
-    Top = 240
+    Left = 225
+    Top = 200
     Width = 400
     Height = 28
     TabOrder = 0
   end
   object Edit1: TEdit
     Left = 245
-    Top = 447
+    Top = 471
     Width = 356
     Height = 28
     TabOrder = 1
   end
   object EdtValorPizza: TEdit
     Left = 473
-    Top = 295
+    Top = 319
     Width = 112
     Height = 28
     TabOrder = 2
   end
   object DBGrid1: TDBGrid
     Left = 24
-    Top = 528
-    Width = 673
+    Top = 568
+    Width = 729
     Height = 120
     TabOrder = 3
     TitleFont.Charset = ANSI_CHARSET
@@ -203,30 +203,31 @@ object FrmVenda: TFrmVenda
   end
   object EdtValorBebida: TEdit
     Left = 473
-    Top = 401
+    Top = 425
     Width = 112
     Height = 28
     TabOrder = 4
   end
   object Button1: TButton
     Left = 24
-    Top = 497
+    Top = 529
     Width = 290
     Height = 25
     Caption = 'Adicionar ao Pedido'
     TabOrder = 5
   end
   object BtnRegPed: TButton
-    Left = 400
-    Top = 497
+    Left = 456
+    Top = 529
     Width = 290
     Height = 25
     Caption = 'Registrar Pedido'
     TabOrder = 6
+    OnClick = BtnRegPedClick
   end
   object cmbCliente: TDBLookupComboBox
-    Left = 177
-    Top = 194
+    Left = 217
+    Top = 154
     Width = 408
     Height = 28
     KeyField = 'ID'
@@ -236,7 +237,7 @@ object FrmVenda: TFrmVenda
   end
   object CBoxPizza: TDBLookupComboBox
     Left = 185
-    Top = 297
+    Top = 321
     Width = 208
     Height = 28
     KeyField = 'ID'
@@ -247,7 +248,7 @@ object FrmVenda: TFrmVenda
   end
   object CBoxBebida: TDBLookupComboBox
     Left = 185
-    Top = 401
+    Top = 425
     Width = 208
     Height = 28
     KeyField = 'ID'
@@ -275,7 +276,6 @@ object FrmVenda: TFrmVenda
     ButtonWidth = 72
     Caption = 'ToolBar1'
     TabOrder = 11
-    ExplicitWidth = 723
     object TBtnCadCli: TToolButton
       Left = 0
       Top = 0
@@ -297,5 +297,13 @@ object FrmVenda: TFrmVenda
       ImageIndex = 2
       OnClick = TBtnCadBebesClick
     end
+  end
+  object EDTIDPED: TEdit
+    Left = 176
+    Top = 272
+    Width = 121
+    Height = 28
+    TabOrder = 12
+    Text = 'EDTIDPED'
   end
 end

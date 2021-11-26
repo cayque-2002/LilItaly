@@ -28,12 +28,11 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
     Font.Name = 'Old English Text MT'
     Font.Style = [fsBold, fsItalic]
     ParentFont = False
-    ExplicitLeft = -2
     ExplicitWidth = 308
   end
   object DBGPedidosPend: TDBGrid
     Left = 48
-    Top = 64
+    Top = 112
     Width = 665
     Height = 169
     TabOrder = 0
@@ -44,23 +43,30 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
     TitleFont.Style = [fsBold, fsItalic]
   end
   object BtnRefreshPedidosPendentes: TButton
-    Left = 296
-    Top = 256
+    Left = 72
+    Top = 304
     Width = 169
     Height = 25
     Caption = 'Refresh'
     TabOrder = 1
   end
-  object DBGPedidosEntregues: TDBGrid
-    Left = 48
+  object Button1: TButton
+    Left = 528
     Top = 304
-    Width = 665
-    Height = 169
+    Width = 169
+    Height = 25
+    Caption = 'Pedido Entregue'
     TabOrder = 2
-    TitleFont.Charset = ANSI_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -19
-    TitleFont.Name = 'Old English Text MT'
-    TitleFont.Style = [fsBold, fsItalic]
+  end
+  object CboxSituacaoPed: TComboBox
+    Left = 360
+    Top = 301
+    Width = 145
+    Height = 31
+    TabOrder = 3
+    Text = 'CboxSituacaoPed'
+    Items.Strings = (
+      'Em aberto'
+      'Entregue')
   end
 end

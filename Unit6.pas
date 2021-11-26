@@ -12,7 +12,8 @@ type
     LbTituloCadBebes: TLabel;
     DBGPedidosPend: TDBGrid;
     BtnRefreshPedidosPendentes: TButton;
-    DBGPedidosEntregues: TDBGrid;
+    Button1: TButton;
+    CboxSituacaoPed: TComboBox;
   private
     { Private declarations }
   public

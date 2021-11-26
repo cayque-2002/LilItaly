@@ -38,6 +38,7 @@ type
     TBtnCadBebes: TToolButton;
     Image1: TImage;
     Image2: TImage;
+    EDTIDPED: TEdit;
     procedure BtnCliClick(Sender: TObject);
     procedure BtnPizzaClick(Sender: TObject);
     procedure BtnBebidaClick(Sender: TObject);
@@ -46,6 +47,7 @@ type
     procedure TBtnCadBebesClick(Sender: TObject);
     procedure CBoxPizzaClick(Sender: TObject);
     procedure CBoxBebidaClick(Sender: TObject);
+    procedure BtnRegPedClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -75,6 +77,12 @@ procedure TFrmVenda.BtnPizzaClick(Sender: TObject);
 begin
   Application.CreateForm(TFRMCadPizza, FRMCadPizza);
   FRMCadPizza.ShowModal;
+end;
+
+procedure TFrmVenda.BtnRegPedClick(Sender: TObject);
+begin
+  DataModule7.INSERTPED.Active := True;
+  EDTIDPED.text := DataModule7.getPedID;
 end;
 
 procedure TFrmVenda.CBoxBebidaClick(Sender: TObject);

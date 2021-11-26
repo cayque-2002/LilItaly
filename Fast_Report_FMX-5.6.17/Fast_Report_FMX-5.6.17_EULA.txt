@@ -1,0 +1,239 @@
+FastReport FMX
+
+SINGLE USER SOFTWARE LICENSE AND LIMITED WARRANTY
+
+PLEASE READ THIS SOFTWARE LICENSE AGREEMENT CAREFULLY BEFORE 
+DOWNLOADING OR USING THE SOFTWARE. BY CLICKING ON THE "ACCEPT" 
+BUTTON, OPENING THE PACKAGE, DOWNLOADING THE PRODUCT, OR USING 
+THE EQUIPMENT THAT CONTAINS THIS PRODUCT, YOU ARE CONSENTING TO 
+BE BOUND BY THIS AGREEMENT. IF YOU DO NOT AGREE TO ALL OF THE TERMS 
+OF THIS AGREEMENT, CLICK THE "DO NOT ACCEPT" BUTTON AND THE 
+INSTALLATION PROCESS WILL NOT CONTINUE, RETURN THE PRODUCT TO THE 
+PLACE OF PURCHASE FOR A FULL REFUND, OR DO NOT DOWNLOAD THE 
+PRODUCT.
+
+This license agreement covers your use of the FastReport FMX, its source code, 
+documentation, and executable files, hereinafter referred to as "Product". 
+The Product is Copyright © 1998-2011 Fast Reports Inc. You may use it and distribute it 
+according to this following License Agreement. If you do not agree with these terms, 
+please remove the Product from your system. By incorporating the Product in your work 
+or distributing the Product to others you implicitly agree to these license terms.
+The Product is, and remains, Copyright © 1998-2011 Fast Reports Inc., with exception of specific copyrights as noted in the individual source files. 
+
+The Product is distributed as try-before-you-buy product. This means:
+
+All copyrights to Product are exclusively owned by the author - Fast Reports Inc. Product 
+is protected by copyright laws. At all times Fast Reports Inc. retains full title to the 
+software. Subject to your acceptance of and accordance with the terms and conditions 
+stated in this agreement, you shall be granted a single-user software license. Any 
+previous agreement with FastReports Inc. is superseded by this agreement.
+
+Anyone may use trial version of Product as long as you want. You can try trial version of 
+Product, which prints only five page of report. Full version of Product not contain such 
+restrictions and shipped with compiled modules (Basic Edition and Standard Edition) or 
+with full source code (Professional Edition and Enterprise Edition). To use full version of 
+Product, you MUST register.
+
+The Product unregistered trial version, may be freely distributed, with exceptions noted  
+below, provided the distribution package is not modified. No person or company may 
+charge a fee for the distribution of Product without written permission from the copyright 
+holder. The Product unregistered trial version may not be bundled or distributed with any 
+other package without written permission of the copyright holder.
+
+Kinds of register is listed in README.TXT.
+
+REGISTER THIS SOFTWARE LICENSE GIVES YOU THE RIGHT TO:
+
+1. Install and use the Product for the sole purposes of designing, developing, testing, and 
+deploying application programs which you create. You may install a copy of the Product 
+on a computer and freely move the Product from one computer to another, provided that 
+you are the only individual using the Product. If you are an entity, you must designate one 
+individual within your organization ("Named User") to have the right to use the Product. 
+
+2. Write and compile your own application programs using the Product contained in this 
+package. All copies of the Product you so write and distribute must include a Fast Reports 
+Inc. copyright notice, or a valid copyright notice of your own.
+
+3.  Make one copy of the Product for backup or archival purposes or copy the Product to a 
+single permanent storage medium provided you keep the original solely for backup or 
+archival purposes.
+
+4. Technical support and notifications on those new versions Product, which can upgrade 
+with no additional payment. 
+
+5. The registered Product may not be rented or leased, but may be permanently 
+transferred, if the person receiving it agrees to terms of this license. If the software is an 
+update, the transfer must include the update and all previous versions. 
+
+6. It is not provided any additional license deductions, except for cost of the registration, 
+connected with creation and distribution of reports and forms of Product. The registered 
+users, can use Product as "Royalty free". It means, that they freely may distribute the 
+programs using Product if it does not contradict conditions of this license agreement. Any 
+sanctions to that on from the author is not required.
+
+ENGAGING IN ANY OF THE ACTIVITIES LISTED BELOW WILL TERMINATE THE 
+SOFTWARE LICENSE. IN ADDITION TO SOFTWARE LICENSE TERMINATION, 
+FAST REPORTS INC. MAY PURSUE CRIMINAL, CIVIL, OR ANY OTHER 
+AVAILABLE REMEDIES.
+
+1. Distribution of any files contained in this software package, other than the runtime 
+packages explicitly listed above, including but not limited to .PAS, .DFM, .DCU files, .DCP 
+files, and design-time packages.
+
+2. Modification, decompilation, disassembly, reverse engineering or translation of the Product.
+
+3. Removal of proprietary notices, labels or marks from the Product or Product 
+Documentation.
+
+4. Inclusion of the Product in a development environment, CRM or ERP systems. 
+
+5. Creation of an application that does not differ materially from the Product.
+
+6. Development and/or distribution of a stand-alone reporting application based on the 
+Product.
+
+7. Creation of an application (whether it be freeware, shareware or a commercial product) 
+which competes directly or indirectly with the Product.  
+
+In these cases you need other type of license.
+
+AGREEMENT PERTAINING TO THE RELEASE OF SOURCE CODE by Fast Reports, 
+Inc. to Recipient:
+
+USE OF SOURCE CODE
+Recipient will not utilize the source for the creation of Product (whether it be freeware, 
+shareware or a commercial product) which competes directly or indirectly with Product. In 
+addition, Recipient will not disclose the source itself, nor the implementations discovered 
+therein, to any party involved in the creation of software which competes directly or 
+indirectly with Product.
+
+DISTRIBUTION OF SOURCE CODE
+Recipient will not distribute the Product.  Specifically this includes all .dcu, .dfm, and .pas 
+files which Fast Reports has provided.
+
+CHANGES TO SOURCE CODE
+Fast Reports reserves the right to change any part of the source in future versions of the 
+Product. These changes may include the removal of classes, properties and methods or 
+the creation of new classes, properties and methods.
+
+TECHNICAL SUPPORT FOR SOURCE CODE
+Fast Reports will not provide support for changes Recipient makes to the source.  
+Recipient assumes full responsibility for supporting any code or application which results 
+from such modification.  Recipient will not hold Fast Reports liable, directly or indirectly, 
+for any changes made to the source, including changes which Recipient has made based 
+on advice or suggestions provided by Fast Reports.
+You must clearly indicate any modifications at the start of each source file. The user of 
+any modified Product code must know that the source file is not original. 
+
+SOURCE IS PROVIDED AS IS
+PRODUCT IS DISTRIBUTED "AS IS". NO WARRANTY OF ANY KIND IS EXPRESSED 
+OR IMPLIED. YOU USE AT YOUR OWN RISK. FAST REPORTS WILL NOT BE LIABLE 
+FOR DATA LOSS, DAMAGES, LOSS OF PROFITS OR ANY OTHER KIND OF LOSS 
+WHILE USING OR MISUSING THIS PRODUCT
+
+TERM AND TERMINATION.  
+The license granted under this Agreement will continue in force until terminated, as set 
+forth herein.  If Licensee fails to pay any monies or provide any services due in connection 
+with the Product, or violates any term or condition of this Agreement, Fast Reports or its 
+agent may terminate this License immediately by giving notice of termination to Licensee. 
+Licensee is responsible for providing valid contact information to Fast Reports. If no valid 
+contact information is available for Licensee in Fast Reports' records, Fast Reports is not 
+required to give notice of termination to Licensee.  Licensee also may terminate this 
+License voluntarily by giving notice of termination to Fast Reports and destroying or 
+returning to Fast Reports all copies of all or any part of the Product and related user 
+documentation in Licensee's possession or under Licensee's control.
+
+EFFECT OF TERMINATION.  
+Immediately upon termination, Licensee will destroy or return to Fast Reports all copies of 
+all or any part of the Product in Licensee's possession or under Licensee's control. 
+Licensee will have no right to keep or use any copy of the Product and related user 
+documentation for any purpose after termination of this Agreement.
+
+TRANSFER OF PRODUCT
+Licensee shall not have the right to transfer this Product license, without the prior written 
+consent of Fast Reports.
+
+CONFIDENTIALITY.  
+The parties to this Agreement will take all reasonable steps to ensure that any material or 
+information identified by either party to be confidential ("Confidential Information"), which 
+the other party has possession or knowledge of in connection with this Agreement, will 
+not be disclosed to others, in whole or in part, without the prior written permission of the 
+other party.  Neither party will have the obligation to maintain the confidentiality of any 
+data or information which (i) was in the receiving party's lawful possession prior to receipt 
+from the other party, (ii) is later lawfully obtained by the receiving party from a third party 
+having no obligation of secrecy to the other party, (iii) is available to the public through no 
+act or failure of the receiving party, (iv) is readily available in the public domain, or (v) is 
+independently developed by the receiving party.  The receiving party will immediately 
+return or destroy any or all Confidential Information that has been provided to it by the 
+other party, upon the other party's request. 
+
+PRODUCT WARRANTY
+Fast Reports warrants the Product to conform to the description of its function and 
+performance.  In the event that the Software does not perform in accordance with this 
+warranty, Fast Reports agrees to repair or fix any non-conformity free of charge, or to 
+refund any amount paid by Licensee for the Product.  Product that does not perform in 
+accordance with its description due to one or more of the following causes will not be 
+covered by this warranty: (i) The code or related files are changed by anyone other than 
+Fast Reports, or (ii) if the Product is custom Product developed for Licensee, the custom 
+Product is installed by anyone other than Fast Reports.
+
+REFUNDS
+In the event that Fast Reports refunds any amounts paid by Licensee for the Product, 
+pursuant to Paragraph above, Licensee understands and agrees that this Agreement and 
+the Product license are terminated, and Fast Reports will withdraw Product, code and 
+related documentation provided under this Agreement.  Upon receipt of such refund, 
+Licensee agrees that it will no longer use, display or otherwise control the Product, code 
+or related documentation for which the refund was issued.
+
+DISCLAIMER OF WARRANTY FOR PRODUCT
+EXCEPT FOR THE EXPRESS WARRANTIES SET FORTH IN THIS AGREEMENT, 
+FAST REPORTS DISCLAIMS ALL IMPLIED WARRANTIES FOR THE PRODUCT, 
+INCLUDING WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A 
+PARTICULAR PURPOSE. FAST REPORTS MAKES NO REPRESENTATIONS 
+CONCERNING THE QUALITY OF THE PRODUCT AND DOES NOT PROMISE THAT 
+THE PRODUCT WILL BE ERROR FREE OR WILL OPERATE WITHOUT 
+INTERRUPTION.  
+
+LIMITATION OF LIABILITY
+IN NO EVENT WILL FAST REPORTS BE LIABLE FOR ANY DIRECT, INDIRECT, 
+INCIDENTAL, SPECIAL, CONSEQUENTIAL OR OTHER DAMAGES ARISING OUT OF 
+THE USE OF THE PRODUCT BY ANY PERSON, REGARDLESS OF WHETHER FAST 
+REPORTS IS INFORMED OF THE POSSIBILITY OF DAMAGES IN ADVANCE. THESE 
+LIMITATIONS APPLY TO ALL CAUSES OF ACTION, INCLUDING BREACH OF 
+CONTRACT, BREACH OF WARRANTY, FAST REPORTS' NEGLIGENCE, STRICT 
+LIABILITY, MISREPRESENTATION AND OTHER TORTS.
+
+OWNERSHIP OF PRODUCT
+Fast Reports has and will retain all ownership rights in the Product, including all patent 
+rights, copyrights, trade secrets, trademarks, service marks, related goodwill and 
+confidential and proprietary information.  Licensee will have no rights in the Product 
+except as explicitly stated in this Agreement.
+
+ASSIGNMENT AND DELEGATION
+Licensee may not assign this Agreement or any rights under it and may not delegate any 
+duties under this Agreement without Fast Reports' prior written consent.  Any attempt to 
+assign or delegate without that consent will be void.
+
+GENERAL
+This Agreement constitutes the entire understanding between Fast Reports and Licensee 
+with respect to subject matter hereof.  Any change to this Agreement must be in writing, 
+signed by Fast Reports and Licensee.  Terms and conditions set forth in any purchase 
+order which differ from, conflict with, or are not included in this Agreement, shall not 
+become part of this Agreement unless specifically accepted by Fast Reports in writing.  
+Licensee shall be responsible for and shall pay, and shall reimburse Fast Reports on 
+request if Fast Reports is required to pay, any sales, use, value added (VAT), 
+consumption or other tax (excluding any tax that is based on Fast Reports' net income), 
+assessment, duty, tariff, or other fee or charge of any kind or nature that is levied or 
+imposed by any governmental authority on the Product. 
+
+All rights not expressly granted here are reserved by Fast Reports Inc.
+
+LICENSEE HAS READ THIS AGREEMENT AND UNDERSTANDS AND
+AGREES TO ALL OF ITS TERMS AND CONDITIONS.
+
+Thank you for using FastReport!
+
+Alexander Tzyganenko
+(CTO of Fast Reports Inc.)
+
+

@@ -92,4 +92,31 @@ object DataModule7: TDataModule7
     Left = 216
     Top = 176
   end
+  object INSERTPED: TSimpleDataSet
+    Active = True
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 
+      'insert into pedidos(cliente, pizza, bebida, endereco_pedido, dat' +
+      'a, situacao_pedidos) values(2, 1, 1, '#39'dsahasdhisadhisadih'#39', curr' +
+      'ent_timestamp,  '#39'Entregue'#39') returning id'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 296
+    Top = 16
+  end
+  object getPed: TSimpleDataSet
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 'select max(id) from pedidos'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 136
+    Top = 232
+    object getPedID: TIntegerField
+      FieldName = 'ID'
+    end
+  end
 end
