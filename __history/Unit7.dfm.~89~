@@ -313,14 +313,13 @@ object dtMod: TdtMod
         ParamType = ptInput
       end>
     Params = <>
-    AfterExecute = getProdutosCarrinhoAfterExecute
     Left = 408
     Top = 56
   end
   object srcProdutosPedido: TDataSource
     DataSet = getProdutosCarrinho
     Left = 408
-    Top = 264
+    Top = 320
   end
   object insertProdutoCarrinho: TSimpleDataSet
     Aggregates = <>
@@ -359,5 +358,67 @@ object dtMod: TdtMod
     Params = <>
     Left = 408
     Top = 128
+  end
+  object getTotalPedido: TSimpleDataSet
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 
+      'SELECT COALESCE(SUM(VALOR * QUANTIDADE) ,0) AS TOTAL FROM ITENS_' +
+      'PEDIDO'#13#10'WHERE PEDIDO_ID = :PAR_PEDIDO_ID'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <
+      item
+        DataType = ftInteger
+        Name = 'PAR_PEDIDO_ID'
+        ParamType = ptInput
+      end>
+    Params = <>
+    Left = 408
+    Top = 192
+    object getTotalPedidoTOTAL: TFMTBCDField
+      FieldName = 'TOTAL'
+      Precision = 18
+      Size = 2
+    end
+  end
+  object deleteProdutoPedido: TSimpleDataSet
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 'DELETE FROM ITENS_PEDIDO WHERE ID = :PAR_ITEM'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <
+      item
+        DataType = ftInteger
+        Name = 'PAR_ITEM'
+        ParamType = ptInput
+      end>
+    Params = <>
+    Left = 408
+    Top = 248
+    object FMTBCDField1: TFMTBCDField
+      FieldName = 'TOTAL'
+      Precision = 18
+      Size = 2
+    end
+  end
+  object updateStatusPedido: TSimpleDataSet
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 'UPDATE PEDIDO SET STATUS = :PAR_STATUS WHERE ID = :PAR_PEDIDO_ID'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <
+      item
+        DataType = ftSmallint
+        Name = 'PAR_STATUS'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftInteger
+        Name = 'PAR_PEDIDO_ID'
+        ParamType = ptInput
+      end>
+    Params = <>
+    Left = 288
+    Top = 144
   end
 end

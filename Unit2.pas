@@ -77,20 +77,18 @@ begin
     Exit();
   end;
 
-  dtMod.getCliente.DataSet.ParamByName('PAR_ID').AsInteger := cmbCliente.KeyValue;
-  dtMod.getCliente.Execute;
+//  dtMod.getCliente.DataSet.ParamByName('PAR_ID').AsInteger := cmbCliente.KeyValue;
+//  dtMod.getCliente.Execute;
+  dtMod.getCliente.DataSet.CommandText := 'SELECT * FROM CLIENTES WHERE ID = ' + IntToStr(cmbCliente.KeyValue);
 
   dtMod.getCliente.Active := False;
   dtMod.getCliente.Active := True;
-  self.EdtEndereco.Text := dtMod.getClientesENDERECO.Value;
+  EdtEndereco.Text := dtMod.getClientesENDERECO.Value;
 end;
 
 procedure TFrmVenda.btnAddProdutoClick(Sender: TObject);
-var produto : String;
+var produto, quantidade, pedido, observacao, sql : String;
 var valor : Extended;
-var quantidade : String;
-var pedido : String;
-var observacao: String;
 var valor_total: Currency;
 begin
 
@@ -123,15 +121,14 @@ begin
   dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_VALOR').AsFloat := valor;
   dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_QTD').AsInteger := StrToInt(quantidade);
   dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_OBS').AsString := observacao;
-
   dtMod.insertProdutoCarrinho.Execute;
 
-  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
-  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(pedido);
-  dtMod.getProdutosCarrinho.Execute;
+//  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
+//  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(pedido);
+//  dtMod.getProdutosCarrinho.Execute;
 
   dtMod.getProdutosCarrinho.Active:= False;
-    dtMod.getProdutosCarrinho.Active:= True;
+  dtMod.getProdutosCarrinho.Active:= True;
 
   cmbProdutos.KeyValue := Null;
   txtValorUnit.Text := '0.00';
@@ -139,9 +136,10 @@ begin
   txtQtd.Text := '1';
   txtObsProduto.Clear;
 
+  dtMod.getTotalPedido.Active := False;
   dtMod.getTotalPedido.Active := True;
   valor_total := StrToCurr(BcdToStr(dtMod.getTotalPedidoTOTAL.Value));
-  dtMod.getTotalPedido.Active := False;
+
   Self.totalVenda.Caption := 'Valor Total R$' + CurrToStr(valor_total);
 
 end;
@@ -236,10 +234,6 @@ begin
       txtObsProduto.Clear;
       totalVenda.Caption := 'Valor Total R$0,00';
 
-//      dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
-
-//      dtMod.getProdutosCarrinho.Active := False;
-
       dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_PEDIDO').Clear;
       dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_PRODUTO').Clear;
       dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_VALOR').Clear;
@@ -301,12 +295,23 @@ begin
   dtMod.getProdutos.Active := True;
   cmbxItensPedido.Visible := True;
 
-  dtMod.getTotalPedido.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
-  dtMod.getTotalPedido.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(dtMod.getUltimoPedidoID.Text);
+//  dtMod.getTotalPedido.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
+//  dtMod.getTotalPedido.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(dtMod.getUltimoPedidoID.Text);
+    dtMod.getTotalPedido.DataSet.CommandText := 'SELECT COALESCE(SUM(VALOR * QUANTIDADE) ,0) AS TOTAL FROM ITENS_PEDIDO WHERE PEDIDO_ID = '+ dtMod.getUltimoPedidoID.Text;
 
-  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
-  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(dtMod.getUltimoPedidoID.Text);
-  dtMod.getProdutosCarrinho.Execute;
+//  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
+//  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(dtMod.getUltimoPedidoID.Text);
+//  dtMod.getProdutosCarrinho.Execute;
+    dtMod.getProdutosCarrinho.DataSet.CommandText :=  'SELECT IP.ID AS NUM_ENTRADA, '+
+                                                      '       PD.NOME, '+
+                                                      '       IP.QUANTIDADE, '+
+                                                      '       IP.VALOR AS "VALOR UNITARIO", '+
+                                                      '       IP.OBSERVACAO, '+
+                                                      '       (IP.QUANTIDADE * IP.VALOR) AS TOTAL '+
+                                                      'FROM ITENS_PEDIDO IP '+
+                                                      'INNER JOIN PEDIDO P ON IP.PEDIDO_ID = P.ID '+
+                                                      'INNER JOIN PRODUTOS PD ON PD.ID = IP.PRODUTO_ID '+
+                                                      'WHERE P.ID = ' + dtMod.getUltimoPedidoID.Text;
 
   dtmod.getProdutosCarrinho.Active := False;
   dtMod.getProdutosCarrinho.Active := True;
