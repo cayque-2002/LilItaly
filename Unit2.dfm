@@ -315,6 +315,7 @@ object FrmVenda: TFrmVenda
     Height = 26
     TabOrder = 3
     Text = 'idPedido'
+    Visible = False
   end
   object ToolBar1: TToolBar
     Left = 0
