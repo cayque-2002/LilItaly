@@ -1,0 +1,139 @@
+object FRMCadCliente: TFRMCadCliente
+  Left = 0
+  Top = 0
+  Caption = 'Little Italy Pizzaria'
+  ClientHeight = 450
+  ClientWidth = 883
+  Color = clBtnFace
+  Font.Charset = ANSI_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Old English Text MT'
+  Font.Style = [fsBold, fsItalic]
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object LbTituloCadCliente: TLabel
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 877
+    Height = 55
+    Align = alTop
+    Alignment = taCenter
+    Caption = 'Cadastrar Cliente'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -48
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+    ExplicitWidth = 399
+  end
+  object LbNome: TLabel
+    Left = 24
+    Top = 96
+    Width = 67
+    Height = 24
+    Caption = 'Nome:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object LbCPFCli: TLabel
+    Left = 421
+    Top = 96
+    Width = 49
+    Height = 24
+    Caption = 'CPF:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object LbTelCli: TLabel
+    Left = 580
+    Top = 96
+    Width = 94
+    Height = 24
+    Caption = 'Telefone:'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -21
+    Font.Name = 'Old English Text MT'
+    Font.Style = [fsBold, fsItalic]
+    ParentFont = False
+  end
+  object txtNome: TEdit
+    Left = 24
+    Top = 126
+    Width = 361
+    Height = 21
+    TabOrder = 0
+  end
+  object txtDocumento: TMaskEdit
+    Left = 421
+    Top = 126
+    Width = 121
+    Height = 21
+    EditMask = '000\.000\.000\-00;1;_'
+    MaxLength = 14
+    TabOrder = 1
+    Text = '   .   .   -  '
+  end
+  object txtTelefone: TMaskEdit
+    Left = 580
+    Top = 126
+    Width = 117
+    Height = 21
+    EditMask = '!\(99\)00000-0000;1;_'
+    MaxLength = 14
+    TabOrder = 2
+    Text = '(  )     -    '
+  end
+  object gridClientes: TDBGrid
+    Left = 24
+    Top = 168
+    Width = 835
+    Height = 225
+    DataSource = dtMod.srcClientes
+    ReadOnly = True
+    TabOrder = 3
+    TitleFont.Charset = ANSI_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Old English Text MT'
+    TitleFont.Style = [fsBold, fsItalic]
+  end
+  object idEdit: TEdit
+    Left = 24
+    Top = 69
+    Width = 129
+    Height = 21
+    TabOrder = 4
+    Text = '0'
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 399
+    Width = 129
+    Height = 43
+    Caption = 'Alterar'
+    TabOrder = 5
+  end
+  object btnCadastrar: TButton
+    Left = 722
+    Top = 119
+    Width = 129
+    Height = 36
+    Caption = 'Cadastrar'
+    TabOrder = 6
+    OnClick = btnCadastrarClick
+  end
+end
