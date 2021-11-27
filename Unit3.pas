@@ -41,16 +41,6 @@ implementation
 
 {$R *.dfm}
 
-//
-//procedure TFRMCadCliente.btnLimparClick(Sender: TObject);
-//begin
-//  EdtNomeCli.Clear;
-//  MEdtCPFCli.Clear;
-//  MEdtTel.Clear;
-//  acao.Text := '1';
-//  EdtNomeCli.SetFocus;
-//end;
-
 procedure TFRMCadCliente.btnCadastrarClick(Sender: TObject);
 var id : Integer;
 var nome: String;

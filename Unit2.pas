@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.DB, Vcl.Grids, Unit7, Unit3, Unit4, Unit5, Unit6,
   Vcl.DBGrids, Vcl.DBCtrls, Data.DBXFirebird, Datasnap.DBClient, SimpleDS,
   Vcl.ComCtrls, Vcl.ToolWin, Vcl.ExtCtrls, System.ImageList, Vcl.ImgList, DBXCommon,
-  Vcl.Buttons, Vcl.Styles, Data.FmtBcd;
+  Vcl.Buttons, Vcl.Styles, Data.FmtBcd, System.UITypes;
 
 type
   TFrmVenda = class(TForm)
@@ -25,13 +25,11 @@ type
     ToolButton1: TToolButton;
     ToolButton2: TToolButton;
     ToolButton3: TToolButton;
-    Button1: TButton;
+    btnIniciarPedido: TButton;
     BitBtn1: TBitBtn;
-    DBGrid1: TDBGrid;
-    btnAlterarItem: TButton;
+    gridItens: TDBGrid;
     btnRemoverItem: TButton;
     btnFinalizar: TButton;
-    idItem: TEdit;
     cmbxItensPedido: TGroupBox;
     btnBuscaProduto: TBitBtn;
     txtQtd: TEdit;
@@ -43,18 +41,21 @@ type
     btnAddProduto: TBitBtn;
     txtObsProduto: TEdit;
     Label4: TLabel;
+    totalVenda: TPanel;
     procedure BtnCliClick(Sender: TObject);
     procedure BtnPizzaClick(Sender: TObject);
     procedure BtnBebidaClick(Sender: TObject);
     procedure TBtnCadCliClick(Sender: TObject);
     procedure TBtnCadPizzaClick(Sender: TObject);
     procedure TBtnCadBebesClick(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
+    procedure btnIniciarPedidoClick(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure btnBuscaProdutoClick(Sender: TObject);
     procedure btnAddProdutoClick(Sender: TObject);
+    procedure btnRemoverItemClick(Sender: TObject);
+    procedure btnFinalizarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -90,6 +91,7 @@ var valor : Extended;
 var quantidade : String;
 var pedido : String;
 var observacao: String;
+var valor_total: Currency;
 begin
 
   pedido := idPedido.Text;
@@ -97,12 +99,12 @@ begin
   quantidade := txtQtd.Text;
   observacao := txtObsProduto.Text;
 
-  if produto = null then
+  if produto = Null then
   begin
     Exit();
   end;
 
-  if Length(txtValorUnit.Text) = 0 then
+  if (Length(txtValorUnit.Text) = 0) or (txtValorUnit.Text = '0.00') then
   begin
     ShowMessage('Digite o valor do item');
     Exit();
@@ -124,13 +126,23 @@ begin
 
   dtMod.insertProdutoCarrinho.Execute;
 
+  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
   dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(pedido);
   dtMod.getProdutosCarrinho.Execute;
 
-  dtMod.getProdutosCarrinho.Active := False;
-  dtMod.getProdutosCarrinho.Active := True;
+  dtMod.getProdutosCarrinho.Active:= False;
+    dtMod.getProdutosCarrinho.Active:= True;
 
-  ShowMessage('Produto Adicionado');
+  cmbProdutos.KeyValue := Null;
+  txtValorUnit.Text := '0.00';
+  txtValorUnit.Enabled := False;
+  txtQtd.Text := '1';
+  txtObsProduto.Clear;
+
+  dtMod.getTotalPedido.Active := True;
+  valor_total := StrToCurr(BcdToStr(dtMod.getTotalPedidoTOTAL.Value));
+  dtMod.getTotalPedido.Active := False;
+  Self.totalVenda.Caption := 'Valor Total R$' + CurrToStr(valor_total);
 
 end;
 
@@ -169,8 +181,85 @@ begin
 end;
 
 
-procedure TFrmVenda.Button1Click(Sender: TObject);
-var cliente: Integer;
+procedure TFrmVenda.btnRemoverItemClick(Sender: TObject);
+var idRemover: Integer;
+var valor_total : Extended;
+begin
+
+  if gridItens.DataSource.DataSet.Fields.Fields[0].Value = Null then
+  begin
+    Exit();
+  end;
+
+  idRemover := gridItens.DataSource.DataSet.Fields.Fields[0].Value;
+
+  case MessageDlg('Remover item do pedido?', mtConfirmation, [mbOK, mbCancel], 0) of
+  mrOk:
+    begin
+       dtMod.deleteProdutoPedido.DataSet.ParamByName('PAR_ITEM').AsInteger := idRemover;
+       dtMod.deleteProdutoPedido.Execute;
+
+       dtMod.getProdutosCarrinho.Active := False;
+       dtMod.getProdutosCarrinho.Active := True;
+
+       dtMod.getTotalPedido.Active := True;
+        valor_total := StrToCurr(BcdToStr(dtMod.getTotalPedidoTOTAL.Value));
+        dtMod.getTotalPedido.Active := False;
+        Self.totalVenda.Caption := 'Valor Total R$' + CurrToStr(valor_total);
+
+    end;
+end;
+
+end;
+
+procedure TFrmVenda.btnFinalizarClick(Sender: TObject);
+var id: Integer;
+begin
+  id := StrToInt(idPedido.Text);
+
+  if gridItens.DataSource.DataSet.RecordCount = 0 then
+  begin
+    ShowMessage('Nenhum produto adicionado ao pedido');
+    Exit();
+  end;
+
+  case MessageDlg('Deseja finalizar o pedido?', mtConfirmation, [mbOK, mbCancel], 0) of
+  mrOk:
+    begin
+      dtMod.updateStatusPedido.DataSet.ParamByName('PAR_STATUS').AsInteger := 2;
+      dtMod.updateStatusPedido.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := id;
+      dtMod.updateStatusPedido.Execute;
+
+      idPedido.Clear;
+      txtQtd.Text := '1';
+      txtValorUnit.Text := '0.00';
+      txtObsProduto.Clear;
+      totalVenda.Caption := 'Valor Total R$0,00';
+
+//      dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
+
+//      dtMod.getProdutosCarrinho.Active := False;
+
+      dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_PEDIDO').Clear;
+      dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_PRODUTO').Clear;
+      dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_VALOR').Clear;
+      dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_QTD').Clear;
+      dtMod.insertProdutoCarrinho.DataSet.ParamByName('PAR_OBS').Clear;
+
+      ShowMessage('Pedido Finalizado');
+
+      cmbVendedor.KeyValue := Null;
+      cmbCliente.KeyValue := Null;
+      EdtEndereco.Clear;
+
+      self.Height := 330;
+    end;
+
+  end;
+
+end;
+
+procedure TFrmVenda.btnIniciarPedidoClick(Sender: TObject);
 var vendedor: Integer;
 var endereco: String;
 
@@ -191,7 +280,6 @@ begin
   end;
 
   vendedor := cmbVendedor.KeyValue;
-  cliente := cmbCliente.KeyValue;
   endereco := EdtEndereco.Text;
 
   if endereco.Length = 0 then
@@ -212,6 +300,17 @@ begin
   idPedido.Text := dtMod.getUltimoPedidoID.Text;
   dtMod.getProdutos.Active := True;
   cmbxItensPedido.Visible := True;
+
+  dtMod.getTotalPedido.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
+  dtMod.getTotalPedido.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(dtMod.getUltimoPedidoID.Text);
+
+  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').Clear;
+  dtMod.getProdutosCarrinho.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := StrToInt(dtMod.getUltimoPedidoID.Text);
+  dtMod.getProdutosCarrinho.Execute;
+
+  dtmod.getProdutosCarrinho.Active := False;
+  dtMod.getProdutosCarrinho.Active := True;
+
 
   self.Height := 680;
 

@@ -117,36 +117,18 @@ object FrmVenda: TFrmVenda
       Height = 18
       Caption = 'Observa'#231#227'o:'
     end
-    object idItem: TEdit
-      Left = 16
-      Top = 261
-      Width = 121
-      Height = 26
-      TabOrder = 0
-      Text = 'idPedido'
-      Visible = False
-    end
-    object DBGrid1: TDBGrid
+    object gridItens: TDBGrid
       Left = 16
       Top = 136
       Width = 745
       Height = 103
       DataSource = dtMod.srcProdutosPedido
-      TabOrder = 1
+      TabOrder = 0
       TitleFont.Charset = ANSI_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -16
       TitleFont.Name = 'Old English Text MT'
       TitleFont.Style = [fsBold, fsItalic]
-    end
-    object btnAlterarItem: TButton
-      Left = 394
-      Top = 247
-      Width = 121
-      Height = 51
-      Caption = 'Alterar Item'
-      TabOrder = 2
-      OnClick = Button1Click
     end
     object btnFinalizar: TButton
       Left = 648
@@ -154,8 +136,8 @@ object FrmVenda: TFrmVenda
       Width = 121
       Height = 51
       Caption = 'Finalizar'
-      TabOrder = 3
-      OnClick = Button1Click
+      TabOrder = 1
+      OnClick = btnFinalizarClick
     end
     object btnRemoverItem: TButton
       Left = 521
@@ -163,8 +145,8 @@ object FrmVenda: TFrmVenda
       Width = 121
       Height = 51
       Caption = 'Remover Item'
-      TabOrder = 4
-      OnClick = Button1Click
+      TabOrder = 2
+      OnClick = btnRemoverItemClick
     end
     object btnBuscaProduto: TBitBtn
       Left = 349
@@ -225,7 +207,7 @@ object FrmVenda: TFrmVenda
         FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFF9F800FFCBC000FF98
         8300FF715500FF644500FF705300FF947F00FFC6BA00FFF7F500FFFFFF00FFFF
         FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
-      TabOrder = 5
+      TabOrder = 3
       OnClick = btnBuscaProdutoClick
     end
     object txtQtd: TEdit
@@ -233,7 +215,7 @@ object FrmVenda: TFrmVenda
       Top = 64
       Width = 151
       Height = 26
-      TabOrder = 6
+      TabOrder = 4
       Text = '1'
     end
     object cmbProdutos: TDBLookupComboBox
@@ -244,7 +226,7 @@ object FrmVenda: TFrmVenda
       KeyField = 'ID'
       ListField = 'NOME'
       ListSource = dtMod.srcProdutos
-      TabOrder = 7
+      TabOrder = 5
     end
     object txtValorUnit: TEdit
       Left = 566
@@ -252,7 +234,7 @@ object FrmVenda: TFrmVenda
       Width = 195
       Height = 26
       Enabled = False
-      TabOrder = 8
+      TabOrder = 6
       Text = '0.00'
     end
     object btnAddProduto: TBitBtn
@@ -261,9 +243,26 @@ object FrmVenda: TFrmVenda
       Width = 36
       Height = 25
       Caption = '&'
-      Kind = bkOK
+      Glyph.Data = {
+        DE010000424DDE01000000000000760000002800000024000000120000000100
+        0400000000006801000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333333333333333330000333333333333333333333333F33333333333
+        00003333344333333333333333388F3333333333000033334224333333333333
+        338338F3333333330000333422224333333333333833338F3333333300003342
+        222224333333333383333338F3333333000034222A22224333333338F338F333
+        8F33333300003222A3A2224333333338F3838F338F33333300003A2A333A2224
+        33333338F83338F338F33333000033A33333A222433333338333338F338F3333
+        0000333333333A222433333333333338F338F33300003333333333A222433333
+        333333338F338F33000033333333333A222433333333333338F338F300003333
+        33333333A222433333333333338F338F00003333333333333A22433333333333
+        3338F38F000033333333333333A223333333333333338F830000333333333333
+        333A333333333333333338330000333333333333333333333333333333333333
+        0000}
+      ModalResult = 1
       NumGlyphs = 2
-      TabOrder = 9
+      TabOrder = 7
       OnClick = btnAddProdutoClick
     end
     object txtObsProduto: TEdit
@@ -271,7 +270,15 @@ object FrmVenda: TFrmVenda
       Top = 104
       Width = 318
       Height = 26
-      TabOrder = 10
+      TabOrder = 8
+    end
+    object totalVenda: TPanel
+      Left = 16
+      Top = 245
+      Width = 167
+      Height = 52
+      Caption = 'Valor Total: R$0,00'
+      TabOrder = 9
     end
   end
   object EdtEndereco: TEdit
@@ -308,7 +315,6 @@ object FrmVenda: TFrmVenda
     Height = 26
     TabOrder = 3
     Text = 'idPedido'
-    Visible = False
   end
   object ToolBar1: TToolBar
     Left = 0
@@ -325,7 +331,6 @@ object FrmVenda: TFrmVenda
     Images = ImageList1
     ParentColor = False
     TabOrder = 4
-    ExplicitWidth = 780
     object ToolButton1: TToolButton
       Left = 0
       Top = 0
@@ -350,14 +355,14 @@ object FrmVenda: TFrmVenda
       ImageIndex = 1
     end
   end
-  object Button1: TButton
+  object btnIniciarPedido: TButton
     Left = 589
     Top = 253
     Width = 121
     Height = 25
     Caption = 'Iniciar Pedido'
     TabOrder = 5
-    OnClick = Button1Click
+    OnClick = btnIniciarPedidoClick
   end
   object BitBtn1: TBitBtn
     Left = 676
@@ -428,7 +433,7 @@ object FrmVenda: TFrmVenda
     Left = 576
     Top = 48
     Bitmap = {
-      494C010103009400C40040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103009400C80040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000000100004000000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

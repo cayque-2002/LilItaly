@@ -87,9 +87,6 @@ Coordinates=215,196,141,102
 [dtMod.getUltimoPedido]
 Coordinates=14,336,148,80
 
-[Button1]
-Coordinates=146,217,59,58
-
 [FRMCadCliente.cds]
 Coordinates=471,155,129,124
 
@@ -98,4 +95,7 @@ Coordinates=471,78,117,36
 
 [idPedido]
 Coordinates=89,100,79,58
+
+[btnIniciarPedido]
+Coordinates=146,217,59,58
 

@@ -45,6 +45,11 @@ type
     getProdutosCarrinho: TSimpleDataSet;
     srcProdutosPedido: TDataSource;
     insertProdutoCarrinho: TSimpleDataSet;
+    getTotalPedido: TSimpleDataSet;
+    getTotalPedidoTOTAL: TFMTBCDField;
+    deleteProdutoPedido: TSimpleDataSet;
+    FMTBCDField1: TFMTBCDField;
+    updateStatusPedido: TSimpleDataSet;
   private
     { Private declarations }
   public
@@ -55,6 +60,8 @@ var
   dtMod: TdtMod;
 
 implementation
+
+
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
