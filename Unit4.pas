@@ -71,7 +71,11 @@ begin
 
 
 
+
     ShowMessage('Produto cadastrada!');
+
+    dtmod.getProdutos.Active := False;
+    dtMod.getProdutos.Active := True;
 
 
 end;

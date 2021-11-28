@@ -3,7 +3,7 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
   Top = 0
   Caption = 'Little Italy Pizzaria'
   ClientHeight = 506
-  ClientWidth = 767
+  ClientWidth = 734
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -17,7 +17,7 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
   object LbTituloCadBebes: TLabel
     Left = 0
     Top = 0
-    Width = 767
+    Width = 734
     Height = 44
     Align = alTop
     Alignment = taCenter
@@ -32,9 +32,10 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
   end
   object DBGPedidosPend: TDBGrid
     Left = 48
-    Top = 112
+    Top = 80
     Width = 665
     Height = 169
+    DataSource = dtMod.Pedidos
     TabOrder = 0
     TitleFont.Charset = ANSI_CHARSET
     TitleFont.Color = clWindowText
@@ -42,31 +43,13 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
     TitleFont.Name = 'Old English Text MT'
     TitleFont.Style = [fsBold, fsItalic]
   end
-  object BtnRefreshPedidosPendentes: TButton
-    Left = 72
-    Top = 304
-    Width = 169
-    Height = 25
-    Caption = 'Refresh'
-    TabOrder = 1
-  end
   object Button1: TButton
-    Left = 528
-    Top = 304
+    Left = 272
+    Top = 272
     Width = 169
     Height = 25
     Caption = 'Pedido Entregue'
-    TabOrder = 2
-  end
-  object CboxSituacaoPed: TComboBox
-    Left = 360
-    Top = 301
-    Width = 145
-    Height = 31
-    TabOrder = 3
-    Text = 'CboxSituacaoPed'
-    Items.Strings = (
-      'Em aberto'
-      'Entregue')
+    TabOrder = 1
+    OnClick = Button1Click
   end
 end

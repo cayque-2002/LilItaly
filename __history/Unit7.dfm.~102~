@@ -8,7 +8,9 @@ object dtMod: TdtMod
     LoginPrompt = False
     Params.Strings = (
       'DriverName=Firebird'
-      'Database=C:\xampp\htdocs\LilItaly\lilitaly.FDB'
+      
+        'Database=C:\Users\cayqu\OneDrive\'#193'rea de Trabalho\Lilitaly\LILIT' +
+        'ALY.FDB'
       'RoleName=RoleName'
       'User_Name=sysdba'
       'Password=masterkey'
@@ -109,7 +111,6 @@ object dtMod: TdtMod
     Top = 16
   end
   object getUltimoPedido: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT MAX(ID) AS ID FROM PEDIDO'
@@ -196,7 +197,6 @@ object dtMod: TdtMod
     end
   end
   object getCliente: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT * FROM CLIENTES WHERE ID = :PAR_ID'
@@ -425,7 +425,7 @@ object dtMod: TdtMod
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 
-      'Insert into PRODUTOS(nome, descricao, valor, foto) '#13#10'values(:par' +
+      'Insert into PRODUTOS(NOME, DESCRICAO, VALOR, FOTO) '#13#10'values(:par' +
       '_nomeprod, :par_descr, :par_valor, :par_foto)'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <

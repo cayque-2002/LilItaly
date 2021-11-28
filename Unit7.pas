@@ -51,6 +51,8 @@ type
     FMTBCDField1: TFMTBCDField;
     updateStatusPedido: TSimpleDataSet;
     InsertProdutos: TSimpleDataSet;
+    Pedidos: TDataSource;
+    getPedidosPend: TSimpleDataSet;
   private
     { Private declarations }
   public

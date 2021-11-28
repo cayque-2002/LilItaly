@@ -9,8 +9,8 @@ object dtMod: TdtMod
     Params.Strings = (
       'DriverName=Firebird'
       
-        'Database=C:\Users\cayqu\OneDrive\'#193'rea de Trabalho\Little Italy P' +
-        'izzaria\LILITALY.FDB'
+        'Database=C:\Users\cayqu\OneDrive\'#193'rea de Trabalho\Lilitaly\LILIT' +
+        'ALY.FDB'
       'RoleName=RoleName'
       'User_Name=sysdba'
       'Password=masterkey'
@@ -23,6 +23,7 @@ object dtMod: TdtMod
       'WaitOnLocks=True'
       'IsolationLevel=ReadCommitted'
       'Trim Char=False')
+    Connected = True
     Left = 48
     Top = 24
   end
@@ -110,7 +111,6 @@ object dtMod: TdtMod
     Top = 16
   end
   object getUltimoPedido: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT MAX(ID) AS ID FROM PEDIDO'
@@ -197,7 +197,6 @@ object dtMod: TdtMod
     end
   end
   object getCliente: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT * FROM CLIENTES WHERE ID = :PAR_ID'
@@ -453,5 +452,21 @@ object dtMod: TdtMod
     Params = <>
     Left = 120
     Top = 240
+  end
+  object Pedidos: TDataSource
+    DataSet = getPedidosPend
+    Left = 216
+    Top = 296
+  end
+  object getPedidosPend: TSimpleDataSet
+    Active = True
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 'select * from PEDIDO where STATUS = 2'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <>
+    Params = <>
+    Left = 200
+    Top = 216
   end
 end

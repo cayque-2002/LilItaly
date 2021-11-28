@@ -111,15 +111,11 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit4.pas">
-            <Form>FRMCadPizza</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Unit5.pas">
-            <Form>FRMCadBebes</Form>
+            <Form>FRMCadProd</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit6.pas">
-            <Form>FRMPedidosPendentes</Form>
+            <Form>it</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit7.pas">

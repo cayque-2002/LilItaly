@@ -43,9 +43,7 @@ type
     Label4: TLabel;
     totalVenda: TPanel;
     procedure BtnCliClick(Sender: TObject);
-    procedure BtnBebidaClick(Sender: TObject);
     procedure TBtnCadCliClick(Sender: TObject);
-    procedure TBtnCadBebesClick(Sender: TObject);
     procedure btnIniciarPedidoClick(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
@@ -55,6 +53,7 @@ type
     procedure btnRemoverItemClick(Sender: TObject);
     procedure btnFinalizarClick(Sender: TObject);
     procedure ToolButton1Click(Sender: TObject);
+    procedure ToolButton3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -145,11 +144,6 @@ begin
 
 end;
 
-procedure TFrmVenda.BtnBebidaClick(Sender: TObject);
-begin
-  Application.CreateForm(TFRMCadBebes, FRMCadBebes);
-  FRMCadBebes.ShowModal;
-end;
 
 procedure TFrmVenda.btnBuscaProdutoClick(Sender: TObject);
 begin
@@ -336,10 +330,10 @@ begin
   FRMCadCliente.Show;
 end;
 
-procedure TFrmVenda.TBtnCadBebesClick(Sender: TObject);
+
+procedure TFrmVenda.ToolButton3Click(Sender: TObject);
 begin
-Application.CreateForm(TFRMCadBebes, FRMCadBebes);
-  FRMCadBebes.Show;
+FRMPedidosPendentes.Show;
 end;
 
 end.

@@ -43,10 +43,8 @@ type
     Label4: TLabel;
     totalVenda: TPanel;
     procedure BtnCliClick(Sender: TObject);
-    procedure BtnPizzaClick(Sender: TObject);
     procedure BtnBebidaClick(Sender: TObject);
     procedure TBtnCadCliClick(Sender: TObject);
-    procedure TBtnCadPizzaClick(Sender: TObject);
     procedure TBtnCadBebesClick(Sender: TObject);
     procedure btnIniciarPedidoClick(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
@@ -338,10 +336,5 @@ begin
   FRMCadCliente.Show;
 end;
 
-procedure TFrmVenda.TBtnCadBebesClick(Sender: TObject);
-begin
-Application.CreateForm(TFRMCadBebes, FRMCadBebes);
-  FRMCadBebes.Show;
-end;
 
 end.

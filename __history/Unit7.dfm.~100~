@@ -8,7 +8,9 @@ object dtMod: TdtMod
     LoginPrompt = False
     Params.Strings = (
       'DriverName=Firebird'
-      'Database=C:\xampp\htdocs\LilItaly\lilitaly.FDB'
+      
+        'Database=C:\Users\cayqu\OneDrive\'#193'rea de Trabalho\Little Italy P' +
+        'izzaria\LILITALY.FDB'
       'RoleName=RoleName'
       'User_Name=sysdba'
       'Password=masterkey'
@@ -21,12 +23,10 @@ object dtMod: TdtMod
       'WaitOnLocks=True'
       'IsolationLevel=ReadCommitted'
       'Trim Char=False')
-    Connected = True
     Left = 48
     Top = 24
   end
   object getVendedores: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT ID, NOME FROM VENDEDORES'
@@ -42,7 +42,6 @@ object dtMod: TdtMod
     Top = 8
   end
   object getClientes: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT * FROM CLIENTES'
@@ -109,7 +108,6 @@ object dtMod: TdtMod
     Top = 16
   end
   object getUltimoPedido: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT MAX(ID) AS ID FROM PEDIDO'
@@ -196,7 +194,6 @@ object dtMod: TdtMod
     end
   end
   object getCliente: TSimpleDataSet
-    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT * FROM CLIENTES WHERE ID = :PAR_ID'
@@ -424,9 +421,26 @@ object dtMod: TdtMod
   object InsertProdutos: TSimpleDataSet
     Aggregates = <>
     Connection = SQLConnection1
-    DataSet.CommandText = 'Insert into PRODUTOS(foto) values(:par_foto)'
+    DataSet.CommandText = 
+      'Insert into PRODUTOS(NOME, DESCRICAO, VALOR, FOTO) '#13#10'values(:par' +
+      '_nomeprod, :par_descr, :par_valor, :par_foto)'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <
+      item
+        DataType = ftUnknown
+        Name = 'par_nomeprod'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftUnknown
+        Name = 'par_descr'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftUnknown
+        Name = 'par_valor'
+        ParamType = ptInput
+      end
       item
         DataType = ftUnknown
         Name = 'par_foto'
