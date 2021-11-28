@@ -33,13 +33,13 @@ object dtMod: TdtMod
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 192
-    Top = 120
+    Left = 136
+    Top = 8
   end
   object ListaUsuarios: TDataSource
     DataSet = getVendedores
-    Left = 192
-    Top = 176
+    Left = 208
+    Top = 8
   end
   object getClientes: TSimpleDataSet
     Active = True
@@ -105,18 +105,19 @@ object dtMod: TdtMod
         ParamType = ptInput
       end>
     Params = <>
-    Left = 32
-    Top = 128
+    Left = 296
+    Top = 16
   end
   object getUltimoPedido: TSimpleDataSet
+    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT MAX(ID) AS ID FROM PEDIDO'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 32
-    Top = 192
+    Left = 296
+    Top = 72
     object getUltimoPedidoID: TIntegerField
       FieldName = 'ID'
     end
@@ -195,10 +196,17 @@ object dtMod: TdtMod
     end
   end
   object getCliente: TSimpleDataSet
+    Active = True
     Aggregates = <>
     Connection = SQLConnection1
+    DataSet.CommandText = 'SELECT * FROM CLIENTES WHERE ID = :PAR_ID'
     DataSet.MaxBlobSize = -1
-    DataSet.Params = <>
+    DataSet.Params = <
+      item
+        DataType = ftInteger
+        Name = 'PAR_ID'
+        ParamType = ptInput
+      end>
     Params = <>
     Left = 568
     Top = 40
@@ -234,7 +242,7 @@ object dtMod: TdtMod
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 488
+    Left = 480
     Top = 96
     object getProdutosID: TIntegerField
       FieldName = 'ID'
@@ -254,7 +262,7 @@ object dtMod: TdtMod
   end
   object srcProdutos: TDataSource
     DataSet = getProdutos
-    Left = 488
+    Left = 480
     Top = 152
   end
   object getProduto: TSimpleDataSet
@@ -269,7 +277,7 @@ object dtMod: TdtMod
         ParamType = ptInput
       end>
     Params = <>
-    Left = 488
+    Left = 480
     Top = 33
     object getProdutoID: TIntegerField
       FieldName = 'ID'
@@ -290,8 +298,20 @@ object dtMod: TdtMod
   object getProdutosCarrinho: TSimpleDataSet
     Aggregates = <>
     Connection = SQLConnection1
+    DataSet.CommandText = 
+      'SELECT IP.ID AS NUM_ENTRADA,'#13#10'        PD.NOME,'#13#10'        IP.QUANT' +
+      'IDADE,'#13#10'        IP.VALOR AS "VALOR UNITARIO",'#13#10'        IP.OBSERV' +
+      'ACAO,'#13#10'        (IP.QUANTIDADE * IP.VALOR) AS TOTAL'#13#10'FROM ITENS_P' +
+      'EDIDO IP'#13#10'INNER JOIN PEDIDO P ON IP.PEDIDO_ID = P.ID'#13#10'INNER JOIN' +
+      ' PRODUTOS PD ON PD.ID = IP.PRODUTO_ID'#13#10'WHERE P.ID = :PAR_PEDIDO_' +
+      'ID'
     DataSet.MaxBlobSize = -1
-    DataSet.Params = <>
+    DataSet.Params = <
+      item
+        DataType = ftUnknown
+        Name = 'PAR_PEDIDO_ID'
+        ParamType = ptInput
+      end>
     Params = <>
     Left = 408
     Top = 56
@@ -342,8 +362,16 @@ object dtMod: TdtMod
   object getTotalPedido: TSimpleDataSet
     Aggregates = <>
     Connection = SQLConnection1
+    DataSet.CommandText = 
+      'SELECT COALESCE(SUM(VALOR * QUANTIDADE) ,0) AS TOTAL FROM ITENS_' +
+      'PEDIDO'#13#10'WHERE PEDIDO_ID = :PAR_PEDIDO_ID'
     DataSet.MaxBlobSize = -1
-    DataSet.Params = <>
+    DataSet.Params = <
+      item
+        DataType = ftInteger
+        Name = 'PAR_PEDIDO_ID'
+        ParamType = ptInput
+      end>
     Params = <>
     Left = 408
     Top = 192
@@ -390,7 +418,7 @@ object dtMod: TdtMod
         ParamType = ptInput
       end>
     Params = <>
-    Left = 24
-    Top = 256
+    Left = 288
+    Top = 144
   end
 end
