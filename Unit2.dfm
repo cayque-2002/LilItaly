@@ -5,6 +5,7 @@ object FrmVenda: TFrmVenda
   ClientHeight = 626
   ClientWidth = 822
   Color = clBtnFace
+  Enabled = False
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
   Font.Height = -16
@@ -123,6 +124,8 @@ object FrmVenda: TFrmVenda
       Width = 745
       Height = 103
       DataSource = dtMod.srcProdutosPedido
+      Enabled = False
+      ReadOnly = True
       TabOrder = 0
       TitleFont.Charset = ANSI_CHARSET
       TitleFont.Color = clWindowText
