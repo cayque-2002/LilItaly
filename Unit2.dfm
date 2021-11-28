@@ -14,12 +14,12 @@ object FrmVenda: TFrmVenda
   Position = poDesigned
   OnShow = FormShow
   PixelsPerInch = 96
-  TextHeight = 18
+  TextHeight = 20
   object LbTituloVenda: TLabel
     Left = 0
     Top = 0
     Width = 822
-    Height = 42
+    Height = 44
     Align = alTop
     Alignment = taCenter
     BiDiMode = bdRightToLeft
@@ -33,12 +33,12 @@ object FrmVenda: TFrmVenda
     ParentBiDiMode = False
     ParentColor = False
     ParentFont = False
-    ExplicitWidth = 285
+    ExplicitWidth = 304
   end
   object LbVenda: TLabel
     Left = 319
     Top = 126
-    Width = 191
+    Width = 176
     Height = 32
     Caption = 'Realizar Venda:'
     Font.Charset = ANSI_CHARSET
@@ -51,8 +51,8 @@ object FrmVenda: TFrmVenda
   object LbCliente: TLabel
     Left = 72
     Top = 204
-    Width = 64
-    Height = 22
+    Width = 56
+    Height = 23
     Caption = 'Cliente:'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -64,8 +64,8 @@ object FrmVenda: TFrmVenda
   object LbEndereco: TLabel
     Left = 48
     Top = 252
-    Width = 88
-    Height = 22
+    Width = 71
+    Height = 23
     Caption = 'Endere'#231'o:'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
@@ -77,8 +77,8 @@ object FrmVenda: TFrmVenda
   object LbLogin: TLabel
     Left = 59
     Top = 164
-    Width = 77
-    Height = 18
+    Width = 72
+    Height = 20
     Caption = 'Vendedor:'
   end
   object cmbxItensPedido: TGroupBox
@@ -92,29 +92,29 @@ object FrmVenda: TFrmVenda
     object Label1: TLabel
       Left = 16
       Top = 40
-      Width = 66
-      Height = 18
+      Width = 65
+      Height = 20
       Caption = 'Produto:'
     end
     object Label2: TLabel
       Left = 566
       Top = 40
-      Width = 108
-      Height = 18
+      Width = 113
+      Height = 20
       Caption = 'Valor Unit'#225'rio:'
     end
     object Label3: TLabel
       Left = 401
       Top = 40
-      Width = 91
-      Height = 18
+      Width = 86
+      Height = 20
       Caption = 'Quantidade:'
     end
     object Label4: TLabel
       Left = 299
       Top = 104
-      Width = 96
-      Height = 18
+      Width = 89
+      Height = 20
       Caption = 'Observa'#231#227'o:'
     end
     object gridItens: TDBGrid
@@ -214,7 +214,7 @@ object FrmVenda: TFrmVenda
       Left = 401
       Top = 64
       Width = 151
-      Height = 26
+      Height = 28
       TabOrder = 4
       Text = '1'
     end
@@ -222,7 +222,7 @@ object FrmVenda: TFrmVenda
       Left = 16
       Top = 64
       Width = 327
-      Height = 26
+      Height = 28
       KeyField = 'ID'
       ListField = 'NOME'
       ListSource = dtMod.srcProdutos
@@ -232,7 +232,7 @@ object FrmVenda: TFrmVenda
       Left = 566
       Top = 64
       Width = 195
-      Height = 26
+      Height = 28
       Enabled = False
       TabOrder = 6
       Text = '0.00'
@@ -269,7 +269,7 @@ object FrmVenda: TFrmVenda
       Left = 401
       Top = 104
       Width = 318
-      Height = 26
+      Height = 28
       TabOrder = 8
     end
     object totalVenda: TPanel
@@ -285,14 +285,14 @@ object FrmVenda: TFrmVenda
     Left = 142
     Top = 252
     Width = 432
-    Height = 26
+    Height = 28
     TabOrder = 0
   end
   object cmbCliente: TDBLookupComboBox
     Left = 142
     Top = 204
     Width = 528
-    Height = 26
+    Height = 28
     KeyField = 'ID'
     ListField = 'NOME'
     ListSource = dtMod.srcClientes
@@ -302,7 +302,7 @@ object FrmVenda: TFrmVenda
     Left = 142
     Top = 164
     Width = 568
-    Height = 26
+    Height = 28
     KeyField = 'ID'
     ListField = 'NOME'
     ListSource = dtMod.ListaUsuarios
@@ -312,14 +312,14 @@ object FrmVenda: TFrmVenda
     Left = 589
     Top = 132
     Width = 121
-    Height = 26
+    Height = 28
     TabOrder = 3
     Text = 'idPedido'
     Visible = False
   end
   object ToolBar1: TToolBar
     Left = 0
-    Top = 42
+    Top = 44
     Width = 822
     Height = 71
     ButtonHeight = 70
@@ -341,6 +341,7 @@ object FrmVenda: TFrmVenda
       Margins.Bottom = 0
       Caption = 'ToolButton1'
       ImageIndex = 0
+      OnClick = ToolButton1Click
     end
     object ToolButton2: TToolButton
       Left = 71
@@ -434,7 +435,7 @@ object FrmVenda: TFrmVenda
     Left = 576
     Top = 48
     Bitmap = {
-      494C010103009400C80040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103009400CC0040004000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000000100004000000001002000000000000000
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

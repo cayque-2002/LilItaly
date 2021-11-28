@@ -43,10 +43,8 @@ type
     Label4: TLabel;
     totalVenda: TPanel;
     procedure BtnCliClick(Sender: TObject);
-    procedure BtnPizzaClick(Sender: TObject);
     procedure BtnBebidaClick(Sender: TObject);
     procedure TBtnCadCliClick(Sender: TObject);
-    procedure TBtnCadPizzaClick(Sender: TObject);
     procedure TBtnCadBebesClick(Sender: TObject);
     procedure btnIniciarPedidoClick(Sender: TObject);
     procedure ToolButton2Click(Sender: TObject);
@@ -56,6 +54,7 @@ type
     procedure btnAddProdutoClick(Sender: TObject);
     procedure btnRemoverItemClick(Sender: TObject);
     procedure btnFinalizarClick(Sender: TObject);
+    procedure ToolButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -174,11 +173,6 @@ begin
   FRMCadCliente.ShowModal;
 end;
 
-procedure TFrmVenda.BtnPizzaClick(Sender: TObject);
-begin
-  Application.CreateForm(TFRMCadPizza, FRMCadPizza);
-  FRMCadPizza.ShowModal;
-end;
 
 
 procedure TFrmVenda.btnRemoverItemClick(Sender: TObject);
@@ -327,12 +321,13 @@ Application.CreateForm(TFRMCadCliente, FRMCadCliente);
   FRMCadCliente.ShowModal;
 end;
 
-procedure TFrmVenda.TBtnCadPizzaClick(Sender: TObject);
-begin
-Application.CreateForm(TFRMCadPizza, FRMCadPizza);
-  FRMCadPizza.ShowModal;
-end;
 
+
+
+procedure TFrmVenda.ToolButton1Click(Sender: TObject);
+begin
+FRMCadProd.Show;
+end;
 
 procedure TFrmVenda.ToolButton2Click(Sender: TObject);
 begin

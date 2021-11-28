@@ -8,7 +8,9 @@ object dtMod: TdtMod
     LoginPrompt = False
     Params.Strings = (
       'DriverName=Firebird'
-      'Database=C:\xampp\htdocs\LilItaly\lilitaly.FDB'
+      
+        'Database=C:\Users\cayqu\OneDrive\'#193'rea de Trabalho\Little Italy P' +
+        'izzaria\LILITALY.FDB'
       'RoleName=RoleName'
       'User_Name=sysdba'
       'Password=masterkey'
@@ -21,7 +23,6 @@ object dtMod: TdtMod
       'WaitOnLocks=True'
       'IsolationLevel=ReadCommitted'
       'Trim Char=False')
-    Connected = True
     Left = 48
     Top = 24
   end
@@ -420,5 +421,37 @@ object dtMod: TdtMod
     Params = <>
     Left = 288
     Top = 144
+  end
+  object InsertProdutos: TSimpleDataSet
+    Aggregates = <>
+    Connection = SQLConnection1
+    DataSet.CommandText = 
+      'Insert into PRODUTOS(NOME, DESCRICAO, VALOR, FOTO) '#13#10'values(:par' +
+      '_nomeprod, :par_descr, :par_valor, :par_foto)'
+    DataSet.MaxBlobSize = -1
+    DataSet.Params = <
+      item
+        DataType = ftUnknown
+        Name = 'par_nomeprod'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftUnknown
+        Name = 'par_descr'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftUnknown
+        Name = 'par_valor'
+        ParamType = ptInput
+      end
+      item
+        DataType = ftUnknown
+        Name = 'par_foto'
+        ParamType = ptInput
+      end>
+    Params = <>
+    Left = 120
+    Top = 240
   end
 end

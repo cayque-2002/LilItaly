@@ -50,6 +50,7 @@ type
     deleteProdutoPedido: TSimpleDataSet;
     FMTBCDField1: TFMTBCDField;
     updateStatusPedido: TSimpleDataSet;
+    InsertProdutos: TSimpleDataSet;
   private
     { Private declarations }
   public
