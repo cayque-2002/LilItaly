@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ExtDlgs, Unit7, Vcl.imaging.pngimage,
-  Data.DB, Vcl.Imaging.jpeg;
+  Data.DB, Vcl.Imaging.jpeg, frxExportCSV, frxClass, frxExportPDF, frxDBSet;
 
 type
   TFRMCadProd = class(TForm)
@@ -20,8 +20,14 @@ type
     Image1: TImage;
     OpenPictureDialog1: TOpenPictureDialog;
     BtnRegistrarProd: TButton;
+    BtnRelPizza: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    frxPDFExport1: TfrxPDFExport;
+    frxCSVExport1: TfrxCSVExport;
     procedure Image1Click(Sender: TObject);
     procedure BtnRegistrarProdClick(Sender: TObject);
+    procedure BtnLimparCadPizzaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,6 +42,13 @@ implementation
 {$R *.dfm}
 
 
+
+procedure TFRMCadProd.BtnLimparCadPizzaClick(Sender: TObject);
+begin
+EdtNomeProd.Clear;
+EdtDescricaoProd.Clear;
+EdtValorProd.Clear;
+end;
 
 procedure TFRMCadProd.BtnRegistrarProdClick(Sender: TObject);
 

@@ -12,6 +12,7 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
   Font.Style = [fsBold, fsItalic]
   OldCreateOrder = False
   Position = poScreenCenter
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 23
   object LbTituloCadBebes: TLabel
@@ -54,18 +55,16 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
     OnClick = BtnEntregaPedClick
   end
   object BtnRelPP: TButton
-    Left = 16
+    Left = 8
     Top = 496
     Width = 241
     Height = 25
     Caption = 'Relat'#243'rio pedidos pendentes'
     TabOrder = 2
-    OnClick = BtnEntregaPedClick
+    OnClick = BtnRelPPClick
   end
   object frxReport1: TfrxReport
     Version = '5.6.17'
-    DataSet = frxDBDataset1
-    DataSetName = 'frxDBDataset1'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
     PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
@@ -102,44 +101,42 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
       BottomMargin = 10.000000000000000000
       object ReportTitle1: TfrxReportTitle
         FillType = ftBrush
-        Height = 102.047310000000000000
+        Height = 60.472480000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
           Width = 721.890230000000000000
-          Height = 102.047310000000000000
+          Height = 49.133890000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -27
           Font.Name = 'Arial'
           Font.Style = []
-          Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
-            'Relat'#243'rio de Pedidos Pendentes')
+            'Relat'#243'rio de pedidos n'#227'o entregues/cancelados')
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
-        Height = 340.157700000000000000
-        Top = 181.417440000000000000
+        Height = 113.385900000000000000
+        Top = 260.787570000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
         object SysMemo1: TfrxSysMemoView
-          Left = 22.677180000000000000
-          Top = 162.519790000000000000
-          Width = 94.488250000000000000
-          Height = 136.063080000000000000
+          Left = 11.338590000000000000
+          Top = 15.118120000000000000
+          Width = 132.283550000000000000
+          Height = 56.692950000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -27
           Font.Name = 'Arial'
           Font.Style = []
-          Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
             '[(<frxDBDataset1."ID">)]')
@@ -147,33 +144,54 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
           VAlign = vaCenter
         end
         object SysMemo2: TfrxSysMemoView
-          Left = 204.094620000000000000
-          Top = 185.196970000000000000
-          Width = 385.512060000000000000
-          Height = 90.708720000000000000
+          Left = 173.858380000000000000
+          Top = 11.338590000000000000
+          Width = 306.141930000000000000
+          Height = 56.692950000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -27
           Font.Name = 'Arial'
           Font.Style = []
-          Fill.BackColor = clSilver
           HAlign = haCenter
           Memo.UTF8W = (
             '[(<frxDBDataset1."ENDERECO">)]')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo3: TfrxMemoView
-          Left = 204.094620000000000000
+        object SysMemo3: TfrxSysMemoView
+          Left = 540.472790000000000000
           Top = 11.338590000000000000
-          Width = 151.181200000000000000
-          Height = 120.944960000000000000
+          Width = 113.385900000000000000
+          Height = 52.913420000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -27
           Font.Name = 'Arial'
           Font.Style = []
-          Fill.BackColor = clSilver
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[(<frxDBDataset1."STATUS">)]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Height = 98.267780000000000000
+        Top = 102.047310000000000000
+        Width = 718.110700000000000000
+        object Memo3: TfrxMemoView
+          Left = 181.417440000000000000
+          Top = 37.795300000000000000
+          Width = 302.362400000000000000
+          Height = 37.795300000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -27
+          Font.Name = 'Arial'
+          Font.Style = []
+          Fill.BackColor = 65529
           HAlign = haCenter
           Memo.UTF8W = (
             'Endere'#231'o')
@@ -182,21 +200,44 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
         end
         object Memo2: TfrxMemoView
           Left = 15.118120000000000000
-          Top = 11.338590000000000000
-          Width = 151.181200000000000000
-          Height = 120.944960000000000000
+          Top = 15.118120000000000000
+          Width = 128.504020000000000000
+          Height = 64.252010000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -27
           Font.Name = 'Arial'
           Font.Style = []
-          Fill.BackColor = clSilver
+          Fill.BackColor = 65529
           HAlign = haCenter
           Memo.UTF8W = (
             'N'#250'mero do pedido')
           ParentFont = False
           VAlign = vaCenter
         end
+        object Memo4: TfrxMemoView
+          Left = 540.472790000000000000
+          Top = 15.118120000000000000
+          Width = 151.181200000000000000
+          Height = 60.472480000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -27
+          Font.Name = 'Arial'
+          Font.Style = []
+          Fill.BackColor = 65529
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Status Pedido')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object Footer1: TfrxFooter
+        FillType = ftBrush
+        Height = 64.252010000000000000
+        Top = 396.850650000000000000
+        Width = 718.110700000000000000
       end
     end
   end
@@ -230,7 +271,7 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
     PrintScaling = False
     PdfA = False
     Left = 104
-    Top = 312
+    Top = 336
   end
   object frxCSVExport1: TfrxCSVExport
     UseFileCache = True

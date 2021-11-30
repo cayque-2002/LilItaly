@@ -18,6 +18,8 @@ type
     frxPDFExport1: TfrxPDFExport;
     frxCSVExport1: TfrxCSVExport;
     procedure BtnEntregaPedClick(Sender: TObject);
+    procedure BtnRelPPClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -51,8 +53,18 @@ begin
        dtMod.getPedidosPend.Active := False;
        dtMod.getPedidosPend.Active := True;
     end;
+
 end;
 end;
+procedure TFRMPedidosPendentes.BtnRelPPClick(Sender: TObject);
+begin
+    frxReport1.prepareReport();
+    frxReport1.ShowPreparedReport
+end;
+procedure TFRMPedidosPendentes.FormActivate(Sender: TObject);
+begin
+       dtMod.getPedidosPend.Active := False;
+       dtMod.getPedidosPend.Active := True;
+end;
+
 end.
-
-

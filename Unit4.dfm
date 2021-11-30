@@ -684,24 +684,129 @@ object FRMCadProd: TFRMCadProd
     TabOrder = 2
   end
   object BtnLimparCadPizza: TButton
-    Left = 461
-    Top = 296
+    Left = 338
+    Top = 264
     Width = 92
     Height = 25
     Caption = 'Limpar'
     TabOrder = 3
+    OnClick = BtnLimparCadPizzaClick
   end
   object BtnRegistrarProd: TButton
-    Left = 77
-    Top = 296
+    Left = 20
+    Top = 264
     Width = 92
     Height = 25
     Caption = 'Registrar'
     TabOrder = 4
     OnClick = BtnRegistrarProdClick
   end
+  object BtnRelPizza: TButton
+    Left = 392
+    Top = 320
+    Width = 158
+    Height = 25
+    Caption = 'Produtos cadastrados'
+    TabOrder = 5
+    OnClick = BtnLimparCadPizzaClick
+  end
   object OpenPictureDialog1: TOpenPictureDialog
     Left = 600
     Top = 184
+  end
+  object frxReport1: TfrxReport
+    Version = '5.6.17'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44530.615486840280000000
+    ReportOptions.LastChange = 44530.615486840280000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 48
+    Top = 304
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object Memo1: TfrxMemoView
+        Left = 3.779530000000000000
+        Top = -11.338590000000000000
+        Width = 710.551640000000000000
+        Height = 60.472480000000000000
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -27
+        Font.Name = 'Arial'
+        Font.Style = []
+        HAlign = haCenter
+        Memo.UTF8W = (
+          'Relat'#243'rio produtos cadastrados')
+        ParentFont = False
+        VAlign = vaCenter
+      end
+    end
+  end
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    DataSet = dtMod.getProdutos
+    BCDToCurrency = False
+    Left = 112
+    Top = 304
+  end
+  object frxPDFExport1: TfrxPDFExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    PrintOptimized = False
+    Outline = False
+    Background = False
+    HTMLTags = True
+    Quality = 95
+    Transparency = False
+    Author = 'FastReport'
+    Subject = 'FastReport PDF export'
+    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
+    HideToolbar = False
+    HideMenubar = False
+    HideWindowUI = False
+    FitWindow = False
+    CenterWindow = False
+    PrintScaling = False
+    PdfA = False
+    Left = 184
+    Top = 304
+  end
+  object frxCSVExport1: TfrxCSVExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    Separator = ';'
+    OEMCodepage = False
+    UTF8 = False
+    NoSysSymbols = True
+    ForcedQuotes = False
+    Left = 248
+    Top = 304
   end
 end
