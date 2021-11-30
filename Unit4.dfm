@@ -708,7 +708,7 @@ object FRMCadProd: TFRMCadProd
     Height = 25
     Caption = 'Produtos cadastrados'
     TabOrder = 5
-    OnClick = BtnLimparCadPizzaClick
+    OnClick = BtnRelPizzaClick
   end
   object OpenPictureDialog1: TOpenPictureDialog
     Left = 600
@@ -722,16 +722,20 @@ object FRMCadProd: TFRMCadProd
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 44530.615486840280000000
-    ReportOptions.LastChange = 44530.615486840280000000
+    ReportOptions.CreateDate = 44530.615486840300000000
+    ReportOptions.LastChange = 44530.615486840300000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    Left = 48
+    Left = 32
     Top = 304
-    Datasets = <>
+    Datasets = <
+      item
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+      end>
     Variables = <>
     Style = <>
     object Data: TfrxDataPage
@@ -746,21 +750,102 @@ object FRMCadProd: TFRMCadProd
       RightMargin = 10.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
-      object Memo1: TfrxMemoView
-        Left = 3.779530000000000000
-        Top = -11.338590000000000000
-        Width = 710.551640000000000000
+      object ReportTitle1: TfrxReportTitle
+        FillType = ftBrush
         Height = 60.472480000000000000
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clBlack
-        Font.Height = -27
-        Font.Name = 'Arial'
-        Font.Style = []
-        HAlign = haCenter
-        Memo.UTF8W = (
-          'Relat'#243'rio produtos cadastrados')
-        ParentFont = False
-        VAlign = vaCenter
+        Top = 18.897650000000000000
+        Width = 718.110700000000000000
+        object Memo1: TfrxMemoView
+          Width = 721.890230000000000000
+          Height = 49.133890000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -27
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Relat'#243'rio de produtos cadastrados')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Height = 68.031540000000000000
+        Top = 102.047310000000000000
+        Width = 718.110700000000000000
+        object Memo2: TfrxMemoView
+          Left = 15.118120000000000000
+          Top = 22.677180000000000000
+          Width = 94.488250000000000000
+          Height = 26.456710000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -21
+          Font.Name = 'Arial'
+          Font.Style = []
+          Fill.BackColor = 52479
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Produto')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo3: TfrxMemoView
+          Left = 476.220780000000000000
+          Top = 18.897650000000000000
+          Width = 94.488250000000000000
+          Height = 26.456710000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -21
+          Font.Name = 'Arial'
+          Font.Style = []
+          Fill.BackColor = 52479
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Valor')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+      end
+      object MasterData1: TfrxMasterData
+        FillType = ftBrush
+        Height = 132.283550000000000000
+        Top = 230.551330000000000000
+        Width = 718.110700000000000000
+        DataSet = frxDBDataset1
+        DataSetName = 'frxDBDataset1'
+        RowCount = 0
+        object SysMemo1: TfrxSysMemoView
+          Left = 15.118120000000000000
+          Top = 49.133890000000000000
+          Width = 222.992270000000000000
+          Height = 64.252010000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -21
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8W = (
+            '[(<frxDBDataset1."NOME">)]')
+          ParentFont = False
+        end
+        object SysMemo2: TfrxSysMemoView
+          Left = 476.220780000000000000
+          Top = 26.456710000000000000
+          Width = 124.724490000000000000
+          Height = 64.252010000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -21
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8W = (
+            '[(<frxDBDataset1."VALOR">)]')
+          ParentFont = False
+        end
       end
     end
   end

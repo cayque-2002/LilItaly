@@ -28,6 +28,7 @@ type
     procedure Image1Click(Sender: TObject);
     procedure BtnRegistrarProdClick(Sender: TObject);
     procedure BtnLimparCadPizzaClick(Sender: TObject);
+    procedure BtnRelPizzaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -95,6 +96,12 @@ end;
 
 
 
+
+procedure TFRMCadProd.BtnRelPizzaClick(Sender: TObject);
+begin
+    frxReport1.prepareReport();
+    frxReport1.ShowPreparedReport
+end;
 
 procedure TFRMCadProd.Image1Click(Sender: TObject);
 begin

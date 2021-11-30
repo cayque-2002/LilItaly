@@ -72,7 +72,7 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44529.979235740700000000
-    ReportOptions.LastChange = 44530.000970682900000000
+    ReportOptions.LastChange = 44530.727267465280000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -183,9 +183,9 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
         Width = 718.110700000000000000
         object Memo3: TfrxMemoView
           Left = 181.417440000000000000
-          Top = 37.795300000000000000
+          Top = 15.118120000000000000
           Width = 302.362400000000000000
-          Height = 37.795300000000000000
+          Height = 60.472480000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -27
@@ -271,7 +271,7 @@ object FRMPedidosPendentes: TFRMPedidosPendentes
     PrintScaling = False
     PdfA = False
     Left = 104
-    Top = 312
+    Top = 336
   end
   object frxCSVExport1: TfrxCSVExport
     UseFileCache = True

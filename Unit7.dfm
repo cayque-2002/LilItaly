@@ -236,10 +236,11 @@ object dtMod: TdtMod
     end
   end
   object getProdutos: TSimpleDataSet
+    Active = True
     Aggregates = <>
     Connection = SQLConnection1
     DataSet.CommandText = 'SELECT * FROM PRODUTOS'
-    DataSet.MaxBlobSize = -1
+    DataSet.MaxBlobSize = 1
     DataSet.Params = <>
     Params = <>
     Left = 480
@@ -467,7 +468,7 @@ object dtMod: TdtMod
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
     Params = <>
-    Left = 200
-    Top = 216
+    Left = 216
+    Top = 224
   end
 end
