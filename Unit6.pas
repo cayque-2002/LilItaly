@@ -5,14 +5,19 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids, Unit7,
-  Vcl.DBGrids;
+  Vcl.DBGrids, frxClass, frxDBSet, frxExportCSV, frxExportPDF;
 
 type
   TFRMPedidosPendentes = class(TForm)
     LbTituloCadBebes: TLabel;
     DBGPedidosPend: TDBGrid;
-    Button1: TButton;
-    procedure Button1Click(Sender: TObject);
+    BtnEntregaPed: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    BtnRelPP: TButton;
+    frxPDFExport1: TfrxPDFExport;
+    frxCSVExport1: TfrxCSVExport;
+    procedure BtnEntregaPedClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,10 +31,10 @@ implementation
 
 {$R *.dfm}
 
-procedure TFRMPedidosPendentes.Button1Click(Sender: TObject);
+procedure TFRMPedidosPendentes.BtnEntregaPedClick(Sender: TObject);
 var idEntregar: Integer;
 begin
- if DBGPedidosPend.DataSource.DataSet.Fields.Fields[0].Value = Null then
+  if DBGPedidosPend.DataSource.DataSet.Fields.Fields[0].Value = Null then
   begin
     Exit();
   end;
@@ -40,14 +45,13 @@ begin
   mrOk:
     begin
        dtMod.updateStatusPedido.DataSet.ParamByName('PAR_STATUS').AsInteger := 1;
-       dtMod.updateStatusPedido.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := idEntregar;
-       dtMod.updateStatusPedido.Execute;
+      dtMod.updateStatusPedido.DataSet.ParamByName('PAR_PEDIDO_ID').AsInteger := idEntregar;
+      dtMod.updateStatusPedido.Execute;
 
-  end;
-
-  end;
-    dtmod.getPedidosPend.Active := False;
-    dtMod.getPedidosPend.Active := True;
+       dtMod.getPedidosPend.Active := False;
+       dtMod.getPedidosPend.Active := True;
+    end;
+end;
 end;
 end.
 

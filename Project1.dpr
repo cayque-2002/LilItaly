@@ -5,7 +5,7 @@ uses
   Unit2 in 'Unit2.pas' {FrmVenda},
   Unit3 in 'Unit3.pas' {FRMCadCliente},
   Unit4 in 'Unit4.pas' {FRMCadProd},
-  Unit6 in 'Unit6.pas' {it},
+  Unit6 in 'Unit6.pas' {FRMPedidosPendentes},
   Unit7 in 'Unit7.pas' {dtMod: TDataModule},
   Vcl.Themes,
   Vcl.Styles;
@@ -19,7 +19,7 @@ begin
   Application.CreateForm(TFrmVenda, FrmVenda);
   Application.CreateForm(TFRMCadCliente, FRMCadCliente);
   Application.CreateForm(TFRMCadProd, FRMCadProd);
-  Application.CreateForm(Tit, it);
+  Application.CreateForm(TFRMPedidosPendentes, FRMPedidosPendentes);
   Application.CreateForm(TdtMod, dtMod);
   Application.Run;
 end.

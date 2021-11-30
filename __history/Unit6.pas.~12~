@@ -1,0 +1,42 @@
+unit Unit6;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids, Unit7,
+  Vcl.DBGrids, frxClass, frxDBSet, frxExportCSV, frxExportPDF;
+
+type
+  TFRMPedidosPendentes = class(TForm)
+    LbTituloCadBebes: TLabel;
+    DBGPedidosPend: TDBGrid;
+    Button1: TButton;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
+    Button2: TButton;
+    frxPDFExport1: TfrxPDFExport;
+    frxCSVExport1: TfrxCSVExport;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FRMPedidosPendentes: TFRMPedidosPendentes;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFRMPedidosPendentes.Button1Click(Sender: TObject);
+var idEntregar: Integer;
+begin
+    frxReport1.prepareReport();
+    frxReport1.ShowPreparedReport
+end;
+end.
+
+

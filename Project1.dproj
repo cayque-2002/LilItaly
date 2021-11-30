@@ -115,7 +115,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit6.pas">
-            <Form>it</Form>
+            <Form>FRMPedidosPendentes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit7.pas">

@@ -462,6 +462,7 @@ object dtMod: TdtMod
     Active = True
     Aggregates = <>
     Connection = SQLConnection1
+    DataSet.Active = True
     DataSet.CommandText = 'select * from PEDIDO where STATUS = 2'
     DataSet.MaxBlobSize = -1
     DataSet.Params = <>
